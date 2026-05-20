@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://mami.ae/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mami.ae/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mami.ae/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mami.ae/" />
+  </url>
+  <url>
+    <loc>https://mami.ae/about.html</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mami.ae/about.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mami.ae/about.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mami.ae/about.html" />
+  </url>
+  <url>
+    <loc>https://mami.ae/features.html</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mami.ae/features.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mami.ae/features.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mami.ae/features.html" />
+  </url>
+  <url>
+    <loc>https://mami.ae/contact.html</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mami.ae/contact.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mami.ae/contact.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mami.ae/contact.html" />
+  </url>
+  <url>
+    <loc>https://mami.ae/privacy.html</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://mami.ae/terms.html</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!--
+    blog.html is intentionally excluded from the sitemap at launch — it's
+    a "Coming Soon" placeholder and shouldn't be indexed yet. Add it back
+    once 3+ articles are live (per the requirements doc, Phase 4).
+  -->
+</urlset>

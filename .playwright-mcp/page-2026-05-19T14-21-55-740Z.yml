@@ -1,0 +1,374 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - img
+    - generic:
+      - img
+    - generic:
+      - img
+    - generic:
+      - img
+    - generic:
+      - img
+    - generic:
+      - img
+    - generic:
+      - img
+    - generic:
+      - img
+  - complementary:
+    - generic: Act
+    - generic: I
+    - generic: Bloom
+  - banner:
+    - link "mAmI — home" [ref=e2] [cursor=pointer]:
+      - /url: "#top"
+      - img "mAmI" [ref=e3]
+      - generic [ref=e4]: mAmI
+    - navigation "Primary" [ref=e5]:
+      - link "II The Weight" [ref=e6] [cursor=pointer]:
+        - /url: "#weight"
+        - generic [ref=e7]: II
+        - generic [ref=e8]: The Weight
+      - link "III The Quiet Hour" [ref=e9] [cursor=pointer]:
+        - /url: "#descent"
+        - generic [ref=e10]: III
+        - generic [ref=e11]: The Quiet Hour
+      - link "IV Companion" [ref=e12] [cursor=pointer]:
+        - /url: "#companion"
+        - generic [ref=e13]: IV
+        - generic [ref=e14]: Companion
+      - link "VII Waitlist" [ref=e15] [cursor=pointer]:
+        - /url: "#coda"
+        - generic [ref=e16]: VII
+        - generic [ref=e17]: Waitlist
+    - generic [ref=e18]:
+      - group "Language" [ref=e19]:
+        - button "EN" [pressed] [ref=e20] [cursor=pointer]
+        - generic [ref=e21]: ·
+        - button "عربي" [ref=e22] [cursor=pointer]
+      - link "Join the waitlist" [ref=e23] [cursor=pointer]:
+        - /url: "#coda"
+        - generic [ref=e24]: Join the waitlist
+        - img [ref=e26]
+  - main [ref=e28]:
+    - region "Bloom" [ref=e29]:
+      - generic [ref=e30]:
+        - generic [ref=e31]:
+          - generic [ref=e32]: I
+          - generic [ref=e34]: a bloom, a breath, a beginning
+        - generic [ref=e35]:
+          - generic [ref=e36]: est. 2026 · for mothers
+          - generic [ref=e38]: ∞
+        - generic [ref=e42]:
+          - paragraph [ref=e43]:
+            - generic [ref=e45]: a quiet companion for mothers
+          - heading "For everything you carry." [level=1] [ref=e46]:
+            - generic [ref=e47]:
+              - generic [ref=e49]: For
+              - generic [ref=e51]: everything
+            - generic [ref=e52]:
+              - generic [ref=e54]: you
+              - generic [ref=e56]:
+                - emphasis [ref=e57]: carry
+                - text: .
+          - paragraph [ref=e58]:
+            - generic [ref=e59]: mAmI is a soft place for the loud hour —
+            - generic [ref=e60]: to think out loud, to remember what matters,
+            - generic [ref=e61]: to breathe without performing.
+          - generic [ref=e62]:
+            - link "Save my spot" [ref=e63] [cursor=pointer]:
+              - /url: "#coda"
+              - generic [ref=e65]: Save my spot
+              - img [ref=e67]
+            - link "Why mAmI" [ref=e69] [cursor=pointer]:
+              - /url: "#weight"
+              - generic [ref=e70]: Why mAmI
+        - generic [ref=e73]: scroll to unfold
+    - region "The Weight" [ref=e76]:
+      - generic [ref=e77]:
+        - paragraph [ref=e78]:
+          - generic [ref=e79]: II
+          - generic [ref=e80]: The Weight
+        - heading "You are up, again. And the house is the only thing quieter than your mind." [level=2] [ref=e81]:
+          - text: You are
+          - emphasis [ref=e82]: up
+          - text: ", again."
+          - text: And the house is the only thing
+          - text: quieter than your mind.
+        - paragraph [ref=e83]: Three small portraits of an hour no one writes about.
+        - paragraph [ref=e84]: scroll →
+      - generic [ref=e87]:
+        - article:
+          - generic:
+            - generic:
+              - generic: i.
+              - heading "The 3.47 a.m. ceiling." [level=3]
+              - paragraph: A scribble of light from the hall. A list rebuilding itself before your eyes are open. You are awake because someone needed you to be — and now no one does, and you still are.
+        - article:
+          - generic:
+            - generic:
+              - generic: ii.
+              - heading "The second cup." [level=3]
+              - paragraph: It went cold while you were holding something else. You reheated it, and forgot about it again. By 11 you are running on the version of yourself you promised to retire.
+        - article:
+          - generic:
+            - generic:
+              - generic: iii.
+              - heading "The pause at the door." [level=3]
+              - paragraph: The smallest, quietest second of the day — the one where you almost ask for help, then you don't, because you've forgotten what that sounds like in your own voice.
+        - article:
+          - generic:
+            - paragraph: — for this hour —
+            - paragraph:
+              - emphasis: mAmI was made.
+            - paragraph: Keep scrolling. It gets quieter.
+    - region "The Quiet Hour" [ref=e89]:
+      - generic [ref=e90]:
+        - img [ref=e92]
+        - generic [ref=e124]:
+          - paragraph [ref=e125]: — a quieter truth —
+          - heading "You are not falling apart. You are blooming under pressure." [level=2] [ref=e126]:
+            - generic [ref=e127]:
+              - generic [ref=e129]: You
+              - generic [ref=e131]: are
+              - generic [ref=e133]: not
+            - generic [ref=e134]:
+              - generic [ref=e136]: falling
+              - generic [ref=e138]: apart.
+            - generic [ref=e139]:
+              - emphasis [ref=e142]: You
+              - emphasis [ref=e145]: are
+              - emphasis [ref=e148]: blooming
+            - generic [ref=e149]:
+              - emphasis [ref=e152]: under
+              - emphasis [ref=e155]: pressure.
+          - paragraph [ref=e156]: mAmI was made for the hour no one writes about — for the quiet between everything you do.
+    - region "The Companion" [ref=e158]:
+      - generic [ref=e159]:
+        - paragraph [ref=e160]:
+          - generic [ref=e161]: IV
+          - generic [ref=e162]: The Companion
+        - heading "Four soft tools, made for the way your day actually goes." [level=2] [ref=e163]:
+          - text: Four soft tools, made
+          - text: for the way your day
+          - emphasis [ref=e164]: actually
+          - text: goes.
+      - generic [ref=e165]:
+        - generic [ref=e167]:
+          - generic:
+            - generic:
+              - img
+          - generic:
+            - generic:
+              - img
+          - generic:
+            - generic:
+              - img
+          - generic:
+            - generic:
+              - img
+        - generic [ref=e168]:
+          - article [ref=e169]:
+            - generic [ref=e170]: i.
+            - paragraph [ref=e171]: AI chat companion
+            - heading "You're not alone in your own head." [level=3] [ref=e172]
+            - paragraph [ref=e173]: Talk through your thoughts the way you would with someone who has all night to listen. No advice, unless you ask.
+          - article [ref=e174]:
+            - generic [ref=e175]: ii.
+            - paragraph [ref=e176]: Tasks & reminders
+            - heading "Let go of remembering." [level=3] [ref=e177]
+            - paragraph [ref=e178]: mAmI holds the small, endless list — the appointments, the half-finished thoughts, the things only you would notice — so the inside of your head can be quieter.
+          - article [ref=e179]:
+            - generic [ref=e180]: iii.
+            - paragraph [ref=e181]: Calendar, gently
+            - heading "Your life, organised softly." [level=3] [ref=e182]
+            - paragraph [ref=e183]: One soft view of everyone's everything. Nothing flashing. Nothing urgent unless it truly is.
+          - article [ref=e184]:
+            - generic [ref=e185]: iv.
+            - paragraph [ref=e186]: Wellness check-in
+            - heading "How are you, really?" [level=3] [ref=e187]:
+              - text: How are you,
+              - emphasis [ref=e188]: really
+              - text: "?"
+            - paragraph [ref=e189]: A small, daily moment. Just for you. No score, no streak, no graph of how you're doing. A gentle question, asked kindly.
+    - region "Witness" [ref=e190]:
+      - generic [ref=e191]:
+        - paragraph [ref=e192]:
+          - generic [ref=e193]: V
+          - generic [ref=e194]: Witness
+        - heading "You are not the only one." [level=2] [ref=e195]:
+          - text: You are
+          - emphasis [ref=e196]: not
+          - text: the only one.
+        - paragraph [ref=e197]: A few of the things mothers wrote to us, in the early days.
+      - generic [ref=e198]:
+        - generic [ref=e200]:
+          - generic [ref=e201]: "\"I don't need a fix. I need a witness.\""
+          - generic [ref=e202]: ·
+          - generic [ref=e203]: "\"The 4 a.m. version of me has been waiting for this.\""
+          - generic [ref=e204]: ·
+          - generic [ref=e205]: "\"I told it the truth before I told anyone.\""
+          - generic [ref=e206]: ·
+          - generic [ref=e207]: "\"It felt like being seen without being judged.\""
+          - generic [ref=e208]: ·
+          - generic [ref=e209]: "\"I don't need a fix. I need a witness.\""
+          - generic [ref=e210]: ·
+          - generic [ref=e211]: "\"The 4 a.m. version of me has been waiting for this.\""
+          - generic [ref=e212]: ·
+          - generic [ref=e213]: "\"I told it the truth before I told anyone.\""
+          - generic [ref=e214]: ·
+          - generic [ref=e215]: "\"It felt like being seen without being judged.\""
+          - generic [ref=e216]: ·
+        - generic [ref=e218]:
+          - emphasis [ref=e220]: — the second cup was warm again —
+          - generic [ref=e221]: ·
+          - emphasis [ref=e223]: — a soft place for the loud days —
+          - generic [ref=e224]: ·
+          - emphasis [ref=e226]: — a little less alone at 2 a.m. —
+          - generic [ref=e227]: ·
+          - emphasis [ref=e229]: — the smallest moment of being seen —
+          - generic [ref=e230]: ·
+          - emphasis [ref=e232]: — the second cup was warm again —
+          - generic [ref=e233]: ·
+          - emphasis [ref=e235]: — a soft place for the loud days —
+          - generic [ref=e236]: ·
+          - emphasis [ref=e238]: — a little less alone at 2 a.m. —
+          - generic [ref=e239]: ·
+          - emphasis [ref=e241]: — the smallest moment of being seen —
+          - generic [ref=e242]: ·
+        - generic [ref=e244]:
+          - generic [ref=e245]: "\"It asked how I was, and waited.\""
+          - generic [ref=e246]: ·
+          - generic [ref=e247]: "\"I forgot what that sounded like.\""
+          - generic [ref=e248]: ·
+          - generic [ref=e249]: "\"It didn't try to make me better.\""
+          - generic [ref=e250]: ·
+          - generic [ref=e251]: "\"It just kept me company.\""
+          - generic [ref=e252]: ·
+          - generic [ref=e253]: "\"It asked how I was, and waited.\""
+          - generic [ref=e254]: ·
+          - generic [ref=e255]: "\"I forgot what that sounded like.\""
+          - generic [ref=e256]: ·
+          - generic [ref=e257]: "\"It didn't try to make me better.\""
+          - generic [ref=e258]: ·
+          - generic [ref=e259]: "\"It just kept me company.\""
+          - generic [ref=e260]: ·
+    - region "Open Hand" [ref=e261]:
+      - generic [ref=e262]:
+        - paragraph [ref=e263]:
+          - generic [ref=e264]: VI
+          - generic [ref=e265]: Open hand
+        - generic [ref=e266]:
+          - generic [ref=e267]:
+            - heading "Who mAmI is for." [level=3] [ref=e268]:
+              - text: Who mAmI is
+              - emphasis [ref=e269]: for
+              - text: .
+            - paragraph [ref=e270]: For the mother holding more than anyone counts. For the one running on the second cup. For the one whose love is loud and whose tired is quiet.
+            - paragraph [ref=e271]: For 25, for 42, and for every age that doesn't get talked about. For first-time and fourth-time. For the ones who chose, and the ones still figuring out what they did.
+          - generic [ref=e272]:
+            - heading "What mAmI is not." [level=3] [ref=e273]:
+              - text: What mAmI
+              - emphasis [ref=e274]: is not
+              - text: .
+            - list [ref=e275]:
+              - listitem [ref=e276]:
+                - generic [ref=e277]: —
+                - generic [ref=e278]: Not a medical app.
+              - listitem [ref=e279]:
+                - generic [ref=e280]: —
+                - generic [ref=e281]: Not a therapy platform.
+              - listitem [ref=e282]:
+                - generic [ref=e283]: —
+                - generic [ref=e284]: Not a parenting advice service.
+              - listitem [ref=e285]:
+                - generic [ref=e286]: —
+                - generic [ref=e287]: Not a productivity tool dressed in pink.
+              - listitem [ref=e288]:
+                - generic [ref=e289]: —
+                - generic [ref=e290]: Not one more thing to keep up with.
+        - paragraph [ref=e291]: A companion. Not a coach. Not a fix.
+    - region "Coda" [ref=e292]:
+      - img [ref=e294]
+      - generic [ref=e304]:
+        - paragraph [ref=e305]:
+          - generic [ref=e306]: VII
+          - generic [ref=e307]: Coda
+        - heading "Save your seat. We'll keep it warm." [level=2] [ref=e308]:
+          - text: Save your seat.
+          - text: We'll keep it
+          - emphasis [ref=e309]: warm
+          - text: .
+        - paragraph [ref=e310]: mAmI is still being made, carefully. Leave your name and we'll write to you the moment it's ready to hold yours.
+        - generic [ref=e311]:
+          - generic [ref=e312]:
+            - generic [ref=e313]: Your name
+            - textbox "Your name" [ref=e314]:
+              - /placeholder: The one she calls you
+          - generic [ref=e315]:
+            - generic [ref=e316]: Your email
+            - textbox "Your email" [ref=e317]:
+              - /placeholder: you@quiet.place
+          - button "Save my spot" [ref=e318] [cursor=pointer]:
+            - generic [ref=e320]: Save my spot
+            - img [ref=e322]
+          - paragraph [ref=e324]: We'll only write when mAmI has something gentle to say. No marketing noise, no third parties.
+        - generic [ref=e327]:
+          - paragraph [ref=e328]: or just write to us
+          - link "hello@mami.ae" [ref=e329] [cursor=pointer]:
+            - /url: mailto:hello@mami.ae
+            - text: hello@mami.ae
+            - img [ref=e330]
+          - paragraph [ref=e332]: We read every message. We answer within 48 hours.
+  - contentinfo [ref=e333]:
+    - generic [ref=e334]:
+      - generic [ref=e335]:
+        - link "mAmI — home" [ref=e336] [cursor=pointer]:
+          - /url: "#top"
+          - img "mAmI" [ref=e337]
+        - paragraph [ref=e338]: A soft place for the loud hour.
+      - navigation "Footer" [ref=e339]:
+        - generic [ref=e340]:
+          - paragraph [ref=e341]: The Story
+          - list [ref=e342]:
+            - listitem [ref=e343]:
+              - link "The Weight" [ref=e344] [cursor=pointer]:
+                - /url: "#weight"
+            - listitem [ref=e345]:
+              - link "The Quiet Hour" [ref=e346] [cursor=pointer]:
+                - /url: "#descent"
+            - listitem [ref=e347]:
+              - link "The Companion" [ref=e348] [cursor=pointer]:
+                - /url: "#companion"
+            - listitem [ref=e349]:
+              - link "Open Hand" [ref=e350] [cursor=pointer]:
+                - /url: "#open"
+        - generic [ref=e351]:
+          - paragraph [ref=e352]: Quiet
+          - list [ref=e353]:
+            - listitem [ref=e354]:
+              - link "Privacy" [ref=e355] [cursor=pointer]:
+                - /url: privacy.html
+            - listitem [ref=e356]:
+              - link "Terms" [ref=e357] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e358]:
+              - link "hello@mami.ae" [ref=e359] [cursor=pointer]:
+                - /url: mailto:hello@mami.ae
+        - generic [ref=e360]:
+          - paragraph [ref=e361]: Elsewhere
+          - list [ref=e362]:
+            - listitem [ref=e363]:
+              - link "Instagram" [ref=e364] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e365]:
+              - link "TikTok" [ref=e366] [cursor=pointer]:
+                - /url: "#"
+    - generic [ref=e367]:
+      - paragraph [ref=e368]: mAmI is not a medical, psychological, or professional advice service.
+      - paragraph [ref=e369]: © 2026 mAmI. All rights, gently reserved.
+      - group "Language" [ref=e370]:
+        - button "EN" [pressed] [ref=e371] [cursor=pointer]
+        - generic [ref=e372]: ·
+        - button "عربي" [ref=e373] [cursor=pointer]

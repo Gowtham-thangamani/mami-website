@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>mAmI — AI Companion for Mothers</title>
+<meta name="description" content="mAmI is an AI companion designed for mothers — calm, supportive, and always by your side. Coming soon to iOS and Android." />
+<meta name="theme-color" content="#FBF5F2" />
+
+<link rel="canonical" href="https://mami.ae/" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="mAmI — AI Companion for Mothers" />
+<meta property="og:description" content="An AI companion designed for mothers — calm, supportive, and always by your side. Coming soon." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://mami.ae/" />
+<meta property="og:image" content="https://mami.ae/assets/logo.png" />
+<meta property="og:site_name" content="mAmI" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="mAmI — AI Companion for Mothers" />
+<meta name="twitter:description" content="An AI companion designed for mothers — calm, supportive, and always by your side. Coming soon." />
+<meta name="twitter:image" content="https://mami.ae/assets/logo.png" />
+
+<link rel="icon" type="image/png" href="assets/logo.png" />
+<link rel="apple-touch-icon" href="assets/logo.png" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #FBF5F2;
+    --bg-warm: #F8ECE6;
+    --surface: #FFFFFF;
+    --surface-soft: #FDF7F4;
+    --ink: #1F1018;
+    --ink-soft: #3D0F26;
+    --muted: #4A2D3A;
+    --line: rgba(74, 21, 48, 0.10);
+    --rose: #E89BB4;
+    --rose-deep: #D77A98;
+    --petal: #FBE8EE;
+    --petal-mist: #FDF1F5;
+    --leaf: #C7A6B0;
+    --shadow-card: 0 1px 2px rgba(74, 21, 48, 0.04), 0 24px 60px -24px rgba(74, 21, 48, 0.18);
+    --shadow-soft: 0 30px 80px -40px rgba(74, 21, 48, 0.25);
+    --r-sm: 10px;
+    --r-md: 16px;
+    --r-lg: 24px;
+    --r-pill: 999px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.55;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* ---------- Ambient backdrop ---------- */
+  .backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% -10%, var(--petal) 0%, transparent 65%),
+      radial-gradient(ellipse 70% 40% at 100% 100%, var(--petal-mist) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 30% at 0% 80%, rgba(232, 155, 180, 0.10) 0%, transparent 60%),
+      var(--bg);
+  }
+  .backdrop::after {
+    /* grain */
+    content: "";
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.29  0 0 0 0 0.08  0 0 0 0 0.19  0 0 0 0.05 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity: 0.45;
+    mix-blend-mode: multiply;
+  }
+
+  /* ---------- Corner botanicals ---------- */
+  .botanical {
+    position: fixed;
+    width: 220px;
+    height: auto;
+    opacity: 0.55;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .botanical.tl { top: -20px; left: -30px; transform: rotate(-8deg); }
+  .botanical.br { bottom: -30px; right: -40px; transform: rotate(170deg); opacity: 0.45; }
+  @media (max-width: 720px) {
+    .botanical { width: 140px; opacity: 0.4; }
+  }
+
+  /* ---------- Layout shell ---------- */
+  .shell {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 28px 28px 72px;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+  @media (min-width: 720px) {
+    .shell { padding: 40px 48px 80px; }
+  }
+
+  /* ---------- Top bar ---------- */
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+  .topbar .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .topbar .brand-logo {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+  }
+  .topbar .wordmark {
+    font-size: 28px;
+    color: var(--ink-soft);
+    font-style: italic;
+    font-feature-settings: "ss01" on;
+    line-height: 1;
+  }
+  @media (max-width: 480px) {
+    .topbar .brand-logo { width: 42px; height: 42px; }
+    .topbar .wordmark { font-size: 24px; }
+  }
+  .topbar .wordmark span { font-style: normal; }
+  .topbar a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+    transition: color .25s ease;
+    position: relative;
+  }
+  .topbar a::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -4px;
+    height: 1px;
+    background: var(--ink-soft);
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform .35s ease;
+  }
+  .topbar a:hover { color: var(--ink-soft); }
+  .topbar a:hover::after { transform: scaleX(1); transform-origin: left center; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 56px;
+  }
+  @media (min-width: 720px) {
+    .hero { padding-top: 80px; }
+  }
+
+  .logo-wrap {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 18px;
+    animation: rise .9s cubic-bezier(.2,.7,.2,1) both;
+  }
+  .logo-wrap::before {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    background: radial-gradient(circle, rgba(232,155,180,0.30) 0%, transparent 60%);
+    filter: blur(20px);
+    z-index: 0;
+    animation: breathe 6s ease-in-out infinite;
+  }
+  .logo-wrap img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 1;
+    mix-blend-mode: multiply;
+  }
+  @media (min-width: 720px) {
+    .logo-wrap { width: 220px; height: 220px; }
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px 7px 10px;
+    border-radius: var(--r-pill);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    box-shadow: var(--shadow-card);
+    animation: rise .9s .15s cubic-bezier(.2,.7,.2,1) both;
+  }
+  .chip .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--rose-deep);
+    box-shadow: 0 0 0 4px rgba(232, 155, 180, 0.25);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+
+  .headline {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(34px, 6.4vw, 52px);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    color: var(--ink-soft);
+    margin: 28px 0 18px;
+    max-width: 18ch;
+    font-variation-settings: "opsz" 110, "SOFT" 50;
+    animation: rise 1s .25s cubic-bezier(.2,.7,.2,1) both;
+  }
+  .headline em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--rose-deep);
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+  }
+
+  .subhead {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(15px, 2vw, 17px);
+    color: var(--muted);
+    max-width: 32ch;
+    margin: 0 auto;
+    animation: rise 1s .35s cubic-bezier(.2,.7,.2,1) both;
+  }
+
+  .description {
+    margin-top: 28px;
+    max-width: 46ch;
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: var(--ink);
+    animation: rise 1s .45s cubic-bezier(.2,.7,.2,1) both;
+  }
+
+  /* ---------- Pillars ---------- */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    width: 100%;
+    max-width: 540px;
+    margin: 44px 0 12px;
+    animation: rise 1s .55s cubic-bezier(.2,.7,.2,1) both;
+  }
+  .pillar {
+    padding: 14px 8px;
+    text-align: center;
+    border-right: 1px dashed var(--line);
+  }
+  .pillar:last-child { border-right: none; }
+  .pillar svg {
+    width: 22px;
+    height: 22px;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+  .pillar div {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.3;
+    font-weight: 500;
+  }
+  @media (max-width: 480px) {
+    .pillars { gap: 0; }
+    .pillar { padding: 12px 4px; }
+    .pillar div { font-size: 11px; }
+  }
+
+  /* ---------- Email card ---------- */
+  .signup {
+    width: 100%;
+    max-width: 480px;
+    margin: 48px auto 0;
+    padding: 26px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow-soft);
+    animation: rise 1s .65s cubic-bezier(.2,.7,.2,1) both;
+    position: relative;
+    overflow: hidden;
+  }
+  .signup::before {
+    content: "";
+    position: absolute;
+    top: -40%; right: -20%;
+    width: 280px; height: 280px;
+    background: radial-gradient(circle, var(--petal) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .signup-label {
+    position: relative;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+    text-align: center;
+    letter-spacing: 0.01em;
+  }
+
+  .signup form {
+    position: relative;
+    display: flex;
+    gap: 8px;
+    background: var(--surface-soft);
+    border: 1px solid var(--line);
+    border-radius: var(--r-pill);
+    padding: 4px;
+    transition: border-color .25s ease, box-shadow .25s ease;
+  }
+  .signup form:focus-within {
+    border-color: var(--rose-deep);
+    box-shadow: 0 0 0 4px rgba(232, 155, 180, 0.16);
+  }
+  .signup input {
+    flex: 1;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 12px 16px;
+    font: inherit;
+    font-size: 14px;
+    color: var(--ink);
+    min-width: 0;
+  }
+  .signup input::placeholder { color: var(--muted); }
+
+  .signup button {
+    appearance: none;
+    border: 0;
+    cursor: pointer;
+    padding: 12px 22px;
+    background: var(--ink-soft);
+    color: #fff;
+    border-radius: var(--r-pill);
+    font: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    transition: transform .2s ease, background .25s ease;
+    white-space: nowrap;
+  }
+  .signup button:hover { background: #5E1C40; transform: translateY(-1px); }
+  .signup button:active { transform: translateY(0); }
+
+  .signup-note {
+    position: relative;
+    margin-top: 12px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .signup-success {
+    position: relative;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px;
+    color: var(--ink-soft);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 15px;
+    text-align: center;
+  }
+  .signup-success svg { width: 18px; height: 18px; color: var(--rose-deep); }
+  .signup.is-done form,
+  .signup.is-done .signup-note { display: none; }
+  .signup.is-done .signup-success { display: flex; }
+
+  .signup-error {
+    position: relative;
+    display: none;
+    margin-top: 12px;
+    text-align: center;
+    font-size: 13px;
+    color: #B91C1C;
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    border-radius: 10px;
+    padding: 10px 14px;
+  }
+
+  /* ---------- App badges ---------- */
+  .stores {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 36px 0 0;
+    animation: rise 1s .75s cubic-bezier(.2,.7,.2,1) both;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px 12px 16px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    color: var(--muted);
+    text-decoration: none;
+    box-shadow: var(--shadow-card);
+    cursor: not-allowed;
+    transition: transform .25s ease;
+  }
+  .badge:hover { transform: translateY(-1px); }
+  .badge svg {
+    width: 24px;
+    height: 24px;
+    color: var(--ink-soft);
+    flex-shrink: 0;
+  }
+  .badge .badge-tag {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--rose-deep);
+    line-height: 1;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+  .badge .badge-name {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1;
+  }
+
+  /* ---------- Contact + footer ---------- */
+  .contact {
+    text-align: center;
+    margin-top: 48px;
+    font-size: 15px;
+    color: var(--muted);
+    animation: rise 1s .85s cubic-bezier(.2,.7,.2,1) both;
+  }
+  .contact a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1px;
+    transition: border-color .25s ease;
+  }
+  .contact a:hover { border-color: var(--rose-deep); }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 56px auto 24px;
+    color: var(--leaf);
+    opacity: 0.7;
+  }
+  .divider svg { width: 140px; height: auto; }
+
+  footer {
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+  footer a {
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color .25s ease, border-color .25s ease;
+  }
+  footer a:hover { color: var(--ink-soft); border-color: var(--line); }
+  footer .sep { margin: 0 10px; opacity: 0.5; }
+
+  /* ---------- Animations ---------- */
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); opacity: 0.85; }
+    50%      { transform: scale(1.08); opacity: 1; }
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(232, 155, 180, 0.25); }
+    50%      { box-shadow: 0 0 0 7px rgba(232, 155, 180, 0.08); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="backdrop" aria-hidden="true"></div>
+
+<!-- Botanical corner ornaments -->
+<svg class="botanical tl" aria-hidden="true" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#C7A6B0" stroke-width="1.1" stroke-linecap="round" fill="none">
+    <path d="M20 200 C 60 160, 90 110, 110 60" />
+    <path d="M30 180 C 50 175, 70 170, 85 165" />
+    <path d="M50 150 C 70 145, 88 140, 100 130" />
+    <path d="M70 120 C 85 118, 98 115, 108 105" />
+    <path d="M88 95 C 100 92, 110 88, 118 80" />
+  </g>
+  <g fill="#E89BB4" opacity="0.55">
+    <ellipse cx="48" cy="172" rx="6" ry="3" transform="rotate(-25 48 172)" />
+    <ellipse cx="68" cy="142" rx="6" ry="3" transform="rotate(-30 68 142)" />
+    <ellipse cx="86" cy="112" rx="5.5" ry="2.8" transform="rotate(-35 86 112)" />
+    <ellipse cx="104" cy="86" rx="5" ry="2.5" transform="rotate(-40 104 86)" />
+  </g>
+</svg>
+
+<svg class="botanical br" aria-hidden="true" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#C7A6B0" stroke-width="1.1" stroke-linecap="round" fill="none">
+    <path d="M20 200 C 60 160, 90 110, 110 60" />
+    <path d="M30 180 C 50 175, 70 170, 85 165" />
+    <path d="M50 150 C 70 145, 88 140, 100 130" />
+    <path d="M70 120 C 85 118, 98 115, 108 105" />
+  </g>
+  <g fill="#E89BB4" opacity="0.5">
+    <ellipse cx="48" cy="172" rx="6" ry="3" transform="rotate(-25 48 172)" />
+    <ellipse cx="68" cy="142" rx="6" ry="3" transform="rotate(-30 68 142)" />
+    <ellipse cx="86" cy="112" rx="5.5" ry="2.8" transform="rotate(-35 86 112)" />
+  </g>
+</svg>
+
+<div class="shell">
+
+  <nav class="topbar">
+    <div class="brand">
+      <img class="brand-logo" src="assets/logo.png" alt="" aria-hidden="true" />
+      <span class="wordmark">m<span>A</span>m<em>I</em></span>
+    </div>
+    <a href="mailto:hello@mami.ae">Contact</a>
+  </nav>
+
+  <main class="hero">
+
+    <div class="logo-wrap">
+      <img src="assets/logo.png" alt="mAmI lotus logo" />
+    </div>
+
+    <span class="chip">
+      <span class="dot"></span>
+      Coming Soon — iOS &amp; Android
+    </span>
+
+    <h1 class="headline">
+      You carry so much. mAmI is here to help you <em>carry less.</em>
+    </h1>
+
+    <p class="subhead">
+      An AI companion designed for mothers — calm, supportive,<br />and always by your side.
+    </p>
+
+    <p class="description">
+      mAmI helps mothers manage the invisible mental load of daily life — reminders, routines, and emotional support — all in one calm, simple app. Coming soon to iOS and Android.
+    </p>
+
+    <div class="pillars" aria-label="Features">
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.4A8 8 0 1 1 21 12z" />
+          <path d="M9 11h.01M12 11h.01M15 11h.01" />
+        </svg>
+        <div>AI Chat<br />Companion</div>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="5" y="4" width="14" height="17" rx="2" />
+          <path d="M9 4v-1h6v1" />
+          <path d="M9 11l2 2 4-4" />
+          <path d="M9 17h6" />
+        </svg>
+        <div>Tasks &amp;<br />Reminders</div>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="5" width="18" height="16" rx="2" />
+          <path d="M3 10h18M8 3v4M16 3v4" />
+        </svg>
+        <div>Calendar<br />Sync</div>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />
+        </svg>
+        <div>Wellness<br />Check-in</div>
+      </div>
+    </div>
+
+    <section class="signup" aria-label="Sign up for launch notification">
+      <div class="signup-label">Be the first to know when mAmI launches.</div>
+      <form id="signup-form" novalidate>
+        <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address" autocomplete="email" />
+        <button type="submit">Notify me</button>
+      </form>
+      <div class="signup-note">We&rsquo;ll only email you once — at launch.</div>
+      <div class="signup-success" role="status">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 6 9 17l-5-5" />
+        </svg>
+        Thank you. We&rsquo;ll be in touch when we launch.
+      </div>
+      <div id="signup-error" class="signup-error" role="alert"></div>
+    </section>
+
+    <div class="stores" aria-label="App store availability">
+      <span class="badge" aria-disabled="true" title="Coming soon to the App Store">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.05 12.04c-.02-2.18 1.78-3.23 1.86-3.28-1.02-1.49-2.6-1.69-3.16-1.71-1.34-.14-2.62.79-3.3.79-.69 0-1.74-.77-2.86-.75-1.47.02-2.83.85-3.59 2.16-1.53 2.66-.39 6.59 1.1 8.75.73 1.06 1.6 2.25 2.73 2.21 1.1-.04 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.08 2.65-2.14.84-1.23 1.18-2.42 1.2-2.48-.03-.01-2.3-.88-2.33-3.53zm-2.18-6.49c.6-.73 1.01-1.74.9-2.75-.87.03-1.92.58-2.55 1.3-.56.64-1.05 1.67-.92 2.65.97.08 1.96-.49 2.57-1.2z" />
+        </svg>
+        <span>
+          <span class="badge-tag">Coming soon</span>
+          <span class="badge-name">App Store</span>
+        </span>
+      </span>
+
+      <span class="badge" aria-disabled="true" title="Coming soon to Google Play">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M3.6 2.4c-.3.3-.5.7-.5 1.3v16.6c0 .6.2 1 .5 1.3l9.1-9.6L3.6 2.4z" opacity="0.85"/>
+          <path d="M16.4 8.7 5.3 2.2c-.5-.3-.9-.3-1.3-.1l9.7 10.2 2.7-3.6z" opacity="0.95"/>
+          <path d="M19.8 10.6 17 9l-3 3.3 3 3.2 2.8-1.6c.9-.5.9-1.8 0-2.3z"/>
+          <path d="m4 21.9 9.7-9.6 2.7 3.6L5.3 22c-.4.2-.9.2-1.3-.1z" opacity="0.7"/>
+        </svg>
+        <span>
+          <span class="badge-tag">Coming soon</span>
+          <span class="badge-name">Google Play</span>
+        </span>
+      </span>
+    </div>
+
+    <p class="contact">
+      Questions? Reach us at <a href="mailto:hello@mami.ae">hello@mami.ae</a>
+    </p>
+
+    <div class="divider" aria-hidden="true">
+      <svg viewBox="0 0 140 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 9 H 56" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" />
+        <path d="M84 9 H 138" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" />
+        <path d="M70 4 C 66 7, 66 11, 70 14 C 74 11, 74 7, 70 4 Z" fill="#E89BB4" opacity="0.85"/>
+        <path d="M60 9 C 62 6, 65 6, 67 8" stroke="#C7A6B0" stroke-width="0.8" stroke-linecap="round" fill="none"/>
+        <path d="M80 9 C 78 6, 75 6, 73 8" stroke="#C7A6B0" stroke-width="0.8" stroke-linecap="round" fill="none"/>
+      </svg>
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2026 mAmI. All rights reserved.
+    <span class="sep">|</span>
+    <a href="privacy.html">Privacy Policy</a>
+  </footer>
+
+</div>
+
+<script>
+  // TODO: Replace YOUR_FORM_ID_HERE with your real Getform form ID.
+  // Sign up at https://getform.io → create a form → copy the endpoint that looks like:
+  //   https://getform.io/f/abcdefgh
+  // until this is replaced, submissions will fail and the user will see the error toast.
+  const FORM_ENDPOINT = 'https://getform.io/f/YOUR_FORM_ID_HERE';
+
+  const form = document.getElementById('signup-form');
+  const card = form.closest('.signup');
+  const submitBtn = form.querySelector('button');
+  const errorEl = document.getElementById('signup-error');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const email = form.email.value.trim();
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      form.email.focus();
+      form.style.boxShadow = '0 0 0 4px rgba(232,155,180,0.25)';
+      setTimeout(() => form.style.boxShadow = '', 800);
+      return;
+    }
+
+    errorEl.style.display = 'none';
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+      if (!response.ok) throw new Error('Submission failed (' + response.status + ')');
+      card.classList.add('is-done');
+    } catch (err) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+      errorEl.textContent = 'Something went wrong. Please email us at hello@mami.ae.';
+      errorEl.style.display = 'block';
+    }
+  });
+</script>
+
+</body>
+</html>

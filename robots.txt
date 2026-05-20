@@ -1,0 +1,10 @@
+# mAmI — robots.txt
+# Allow all well-behaved crawlers; keep the placeholder blog out of the index
+# until real articles are live (per requirements doc, Phase 4).
+
+User-agent: *
+Allow: /
+Disallow: /blog.html
+Disallow: /index.coming-soon.bak.html
+
+Sitemap: https://mami.ae/sitemap.xml

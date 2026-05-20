@@ -1,0 +1,28 @@
+[      54ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8765/assets/lotus.png:0
+[     567ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8765/assets/lotus.png:0
+[     597ms] Uncaught TypeError: Cannot read properties of undefined (reading 'bind')
+    at init (https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js:9:20690)
+    at ScrollTrigger (https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js:9:36935)
+    at ne.create (https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js:9:37247)
+    at La (https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9:4512)
+    at Tween (https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9:37227)
+    at Va (https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9:5252)
+    at fromTo (https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9:42469)
+    at <anonymous> (http://localhost:8765/script.js:431:11)
+    at buildWeightAct (http://localhost:8765/script.js:430:23)
+    at <anonymous> (http://localhost:8765/script.js:1394:4)
+[     725ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8765/favicon.ico:0
+[   23620ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8765/assets/lotus.png:0
+[   23902ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8765/assets/lotus.png:0
+[   23959ms] Uncaught TypeError: Cannot read properties of undefined (reading 'bind')
+    at init (https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js:9:20690)
+    at ScrollTrigger (https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js:9:36935)
+    at ne.create (https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js:9:37247)
+    at La (https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9:4512)
+    at Tween (https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9:37227)
+    at Va (https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9:5252)
+    at fromTo (https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9:42469)
+    at <anonymous> (http://localhost:8765/script.js:431:11)
+    at buildWeightAct (http://localhost:8765/script.js:430:23)
+    at <anonymous> (http://localhost:8765/script.js:1397:4)
+[   23981ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8765/favicon.ico:0

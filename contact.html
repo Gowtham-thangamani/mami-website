@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#F1E8DC" />
+  <title>Contact mAmI — Write to us, we read everything</title>
+  <meta name="description" content="Reach the small team behind mAmI. We read every message and answer within 48 hours. No automated replies — just a quiet inbox." />
+
+  <link rel="canonical" href="/contact.html" />
+  <link rel="alternate" hreflang="en" href="/contact.html" />
+  <link rel="alternate" hreflang="ar" href="/contact.html" />
+  <link rel="alternate" hreflang="x-default" href="/contact.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact mAmI — Write to us, we read everything" />
+  <meta property="og:description" content="A quiet inbox. We read every message and answer within 48 hours." />
+  <meta property="og:image" content="/assets/lotus.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..600,30..100,0..1;1,9..144,300..600,30..100,0..1&family=Inter+Tight:wght@300;400;500&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Tajawal:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="theme-day lang-en">
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="header" role="banner">
+    <a class="brand" href="index.html" aria-label="mAmI — home">
+      <img class="brand-logo" src="assets/lotus.png" alt="mAmI" width="220" height="220" />
+      <span class="brand-wordmark">mAmI</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html"><span data-ar="الرئيسية">Home</span></a>
+      <a href="about.html"><span data-ar="عنّا">About</span></a>
+      <a href="features.html"><span data-ar="الميزات">Features</span></a>
+      <a href="contact.html" class="is-current"><span data-ar="تواصلي">Contact</span></a>
+    </nav>
+
+    <div class="header-end">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" class="lang-btn is-active" aria-pressed="true">EN</button>
+        <span class="lang-sep">·</span>
+        <button type="button" class="lang-btn" lang="ar" aria-pressed="false">عربي</button>
+      </div>
+      <a class="cta-pill" href="index.html#coda">
+        <span class="cta-pill-text" data-ar="انضمي للقائمة">Join the waitlist</span>
+        <span class="cta-pill-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+      <button type="button" class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <aside id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+    <div class="mobile-drawer-inner">
+      <nav class="mobile-nav" aria-label="Mobile">
+        <a href="index.html"><span data-ar="الرئيسية">Home</span></a>
+        <a href="about.html"><span data-ar="عنّا">About</span></a>
+        <a href="features.html"><span data-ar="الميزات">Features</span></a>
+        <a href="contact.html"><span data-ar="تواصلي">Contact</span></a>
+      </nav>
+      <a class="cta-pill cta-pill-mobile" href="index.html#coda">
+        <span data-ar="انضمي للقائمة">Join the waitlist</span>
+      </a>
+      <div class="lang mobile-lang" role="group" aria-label="Language">
+        <button type="button" class="lang-btn is-active" aria-pressed="true">EN</button>
+        <span class="lang-sep">·</span>
+        <button type="button" class="lang-btn" lang="ar" aria-pressed="false">عربي</button>
+      </div>
+    </div>
+  </aside>
+
+  <main class="page" id="top">
+    <div class="page-bg" aria-hidden="true">
+      <span class="aura aura-tl"></span>
+      <span class="aura aura-br"></span>
+    </div>
+
+    <div class="page-inner">
+
+      <header class="page-hero fade-up">
+        <p class="page-eyebrow"><span class="dot"></span> <span data-ar="تواصلي">Contact</span></p>
+        <h1 class="page-title" data-ar-html="اكتبي لنا.<br/>نحن <em>نقرأ</em> كلّ شيء.">
+          Write to us.<br/>We <em>read</em> everything.
+        </h1>
+        <p class="page-lead" data-ar="نودّ أن نسمعَ منكِ. أيامُ مَامي الأولى هادئة، ورسالتُكِ ستصلُ إلى شخصٍ يعتني فعلًا.">
+          We'd love to hear from you. mAmI's early days are quiet, and your
+          message will reach someone who actually cares.
+        </p>
+      </header>
+
+      <!-- CONTACT FORM
+           To deliver messages to a real inbox, set the action attribute
+           below to your provider's POST endpoint (Formspree, Mailchimp
+           transactional, ConvertKit, or your own backend). The form will
+           POST with name + email + message and show the warm confirmation
+           message either way. Leave it as "" to keep confirmation-only
+           (placeholder) mode while you decide on a provider. -->
+      <form class="contact-form fade-up" novalidate action="" method="post">
+        <label class="field-area field">
+          <span class="field-label" data-ar="اسمك">Your name</span>
+          <input type="text" name="name" autocomplete="given-name"
+                 placeholder="The one she calls you"
+                 data-ar-placeholder="ما تنادينَهِ به" required />
+          <span class="field-line"></span>
+        </label>
+        <label class="field-area field">
+          <span class="field-label" data-ar="بريدك">Your email</span>
+          <input type="email" name="email" autocomplete="email"
+                 placeholder="you@quiet.place"
+                 data-ar-placeholder="you@quiet.place" required />
+          <span class="field-line"></span>
+        </label>
+        <label class="field-area">
+          <span class="field-label" data-ar="رسالتك">Your message</span>
+          <textarea name="message"
+                    placeholder="Tell us what's on your mind…"
+                    data-ar-placeholder="أخبرينا بما يدور في خاطركِ…"
+                    required></textarea>
+          <span class="field-line"></span>
+        </label>
+        <button class="btn-primary btn-submit" type="submit">
+          <span class="btn-fill"></span>
+          <span class="btn-label submit-label" data-ar="إرسال الرسالة">Send the message</span>
+          <span class="btn-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <p class="form-privacy" data-ar="رسالتُكِ تُرسل بأمان. لا قوائم، لا تسويق، لا أطراف ثالثة.">
+          Your message is sent safely. No lists, no marketing, no third parties.
+        </p>
+        <p class="form-confirm" hidden data-ar-html="<span>تمّ.</span> سنردّ خلال 48 ساعة.">
+          <span>It's sent.</span> We'll write back within 48 hours.
+        </p>
+      </form>
+
+      <p class="contact-or fade-up" data-ar="أو">or</p>
+
+      <div class="contact-channels fade-up">
+        <a class="contact-mail" href="mailto:hello@mami.ae">hello@mami.ae</a>
+
+        <div class="socials" aria-label="Social media">
+          <a href="#" rel="me" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.2c2.65 0 2.97 0 4.02.06 1.13.05 1.92.24 2.6.5.7.27 1.3.64 1.88 1.22.58.58.95 1.17 1.22 1.88.26.68.45 1.47.5 2.6.06 1.05.06 1.37.06 4.02s0 2.97-.06 4.02c-.05 1.13-.24 1.92-.5 2.6-.27.7-.64 1.3-1.22 1.88-.58.58-1.17.95-1.88 1.22-.68.26-1.47.45-2.6.5-1.05.06-1.37.06-4.02.06s-2.97 0-4.02-.06c-1.13-.05-1.92-.24-2.6-.5-.7-.27-1.3-.64-1.88-1.22-.58-.58-.95-1.17-1.22-1.88-.26-.68-.45-1.47-.5-2.6C2.2 14.97 2.2 14.65 2.2 12s0-2.97.06-4.02c.05-1.13.24-1.92.5-2.6.27-.7.64-1.3 1.22-1.88.58-.58 1.17-.95 1.88-1.22.68-.26 1.47-.45 2.6-.5C9.03 2.2 9.35 2.2 12 2.2zm0 1.8c-2.6 0-2.9 0-3.93.05-.96.05-1.48.21-1.82.34-.46.18-.79.4-1.13.74-.34.34-.56.67-.74 1.13-.13.34-.29.86-.34 1.82C4 9.1 4 9.4 4 12s0 2.9.05 3.93c.05.96.21 1.48.34 1.82.18.46.4.79.74 1.13.34.34.67.56 1.13.74.34.13.86.29 1.82.34C9.1 20 9.4 20 12 20s2.9 0 3.93-.05c.96-.05 1.48-.21 1.82-.34.46-.18.79-.4 1.13-.74.34-.34.56-.67.74-1.13.13-.34.29-.86.34-1.82C20 14.9 20 14.6 20 12s0-2.9-.05-3.93c-.05-.96-.21-1.48-.34-1.82a3 3 0 0 0-.74-1.13 3 3 0 0 0-1.13-.74c-.34-.13-.86-.29-1.82-.34C14.9 4 14.6 4 12 4zm0 3.3a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4zm0 1.8a2.9 2.9 0 1 0 0 5.8 2.9 2.9 0 0 0 0-5.8zm5-2.2a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"/></svg>
+          </a>
+          <a href="#" rel="me" aria-label="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M16.6 5.82a4.83 4.83 0 0 1-3.77-2.93h-2.6v11.32a2.7 2.7 0 1 1-1.9-2.57v-2.6a5.3 5.3 0 1 0 4.5 5.24V8.92a7.42 7.42 0 0 0 3.77 1.04V7.36a4.84 4.84 0 0 1 0-1.54z"/></svg>
+          </a>
+        </div>
+
+        <p class="contact-response" data-ar="نقرأ كلّ رسالة. نردّ خلال 48 ساعة.">
+          We read every message. We'll get back to you within 48 hours.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="brand brand-footer" href="index.html" aria-label="mAmI — home">
+          <img class="brand-logo brand-logo-footer" src="assets/lotus.png" alt="mAmI" width="220" height="220" />
+        </a>
+        <p class="footer-tag" data-ar="مكانٌ ناعم لساعةٍ صاخبة.">A soft place for the loud hour.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <div class="footer-col">
+          <p class="footer-h" data-ar="استكشفي">Explore</p>
+          <ul>
+            <li><a href="index.html" data-ar="الرئيسية">Home</a></li>
+            <li><a href="about.html" data-ar="عنّا">About</a></li>
+            <li><a href="features.html" data-ar="الميزات">Features</a></li>
+            <li><a href="contact.html" data-ar="تواصلي">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-h" data-ar="هدوء">Quiet</p>
+          <ul>
+            <li><a href="privacy.html" data-ar="الخصوصيّة">Privacy</a></li>
+            <li><a href="terms.html" data-ar="الشروط">Terms</a></li>
+            <li><a href="blog.html" data-ar="المدوّنة">Journal</a></li>
+            <li><a href="mailto:hello@mami.ae">hello@mami.ae</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-h" data-ar="حول">Elsewhere</p>
+          <ul>
+            <li><a href="#" rel="me" data-ar="إنستغرام">Instagram</a></li>
+            <li><a href="#" rel="me" data-ar="تيك توك">TikTok</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="disclaimer" data-ar="مَامي ليست خدمةً طبيّةً أو نفسيّةً أو خدمة استشارة مهنيّة.">
+        mAmI is not a medical, psychological, or professional advice service.
+      </p>
+      <p class="copyright" data-ar="© 2026 مَامي. جميع الحقوق، محفوظةٌ برفق.">© 2026 mAmI. All rights, gently reserved.</p>
+      <div class="lang lang-foot" role="group" aria-label="Language">
+        <button type="button" class="lang-btn is-active" aria-pressed="true">EN</button>
+        <span class="lang-sep">·</span>
+        <button type="button" class="lang-btn" lang="ar" aria-pressed="false">عربي</button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" role="dialog" aria-label="Cookies">
+    <p data-ar-html="نستخدم ملفّاتٍ صغيرة لفهمِ كيفيّة استخدامِ مَامي بهدوء. <a href='privacy.html'>اعرفي المزيد</a>.">
+      We use small cookies to understand how mAmI is being used, quietly.
+      <a href="privacy.html">Read more</a>.
+    </p>
+    <button type="button" data-ar="حسنًا">Okay</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
+  <script src="analytics.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+- generic [active] [ref=e1]:
+  - banner:
+    - link "mAmI — home" [ref=e2] [cursor=pointer]:
+      - /url: index.html
+      - img "mAmI" [ref=e3]
+      - generic [ref=e4]: mAmI
+    - navigation "Primary" [ref=e5]:
+      - link "Home" [ref=e6] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=e7]: Home
+      - link "About" [ref=e8] [cursor=pointer]:
+        - /url: about.html
+        - generic [ref=e9]: About
+      - link "Features" [ref=e10] [cursor=pointer]:
+        - /url: features.html
+        - generic [ref=e11]: Features
+      - link "Contact" [ref=e12] [cursor=pointer]:
+        - /url: contact.html
+        - generic [ref=e13]: Contact
+    - generic [ref=e14]:
+      - group "Language" [ref=e15]:
+        - button "EN" [pressed] [ref=e16] [cursor=pointer]
+        - generic [ref=e17]: ·
+        - button "عربي" [ref=e18] [cursor=pointer]
+      - link "Join the waitlist" [ref=e19] [cursor=pointer]:
+        - /url: index.html#coda
+        - generic [ref=e20]: Join the waitlist
+        - img [ref=e22]
+  - main [ref=e24]:
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - paragraph [ref=e27]:
+          - generic [ref=e29]: About
+        - heading "A quiet companion, made gently." [level=1] [ref=e30]:
+          - text: A quiet companion,
+          - text: made
+          - emphasis [ref=e31]: gently
+          - text: .
+        - paragraph [ref=e32]: mAmI began as a small idea — that mothers deserve a space that listens before it asks anything in return. We're building it carefully, one breath at a time.
+      - region "Brand statement" [ref=e33]:
+        - paragraph [ref=e34]: AI that supports the mother — not just the task.
+        - paragraph [ref=e35]:
+          - generic [ref=e36]: A companion.
+          - generic [ref=e37]: A reminder.
+          - generic [ref=e38]: A quiet presence.
+      - generic [ref=e39]:
+        - heading "Why mAmI was made." [level=2] [ref=e40]:
+          - text: Why
+          - emphasis [ref=e41]: mAmI
+          - text: was made.
+        - generic [ref=e42]:
+          - paragraph [ref=e43]: Because motherhood is carried more than it is talked about. Because one hour in the day — the quiet hour between everything you do — deserves a place.
+          - paragraph [ref=e44]: Because so many of you hold more than anyone counts, and have forgotten what asking sounds like in your own voice. mAmI is a place where being is allowed, not performing.
+      - generic [ref=e45]:
+        - heading "Our mission." [level=2] [ref=e46]
+        - generic [ref=e47]:
+          - paragraph [ref=e48]: To gently support mothers through AI that understands, listens, and adapts.
+          - paragraph [ref=e49]: mAmI reduces mental load with calm, practical and emotional support.
+      - generic [ref=e50]:
+        - heading "Our vision." [level=2] [ref=e51]
+        - paragraph [ref=e52]:
+          - text: A world where mothers are
+          - emphasis [ref=e53]: supported
+          - text: ", not overwhelmed. Where emotional labor is acknowledged, mental load is shared, and support is always present."
+      - generic [ref=e54]:
+        - heading "Our four pillars." [level=2] [ref=e55]:
+          - text: Our
+          - emphasis [ref=e56]: four
+          - text: pillars.
+        - paragraph [ref=e57]: Support · Empathy · Intelligence · Trust — four principles that guide every interaction.
+        - generic [ref=e58]:
+          - article [ref=e59]:
+            - generic [ref=e60]: i.
+            - paragraph [ref=e61]: Emotional support
+            - heading "Motherhood is emotional before it is logistical." [level=3] [ref=e62]
+            - paragraph [ref=e63]: mAmI offers reassurance, gentle check-ins, and emotional safety.
+          - article [ref=e64]:
+            - generic [ref=e65]: ii.
+            - paragraph [ref=e66]: Intelligent assistance
+            - heading "Smart, not demanding." [level=3] [ref=e67]
+            - paragraph [ref=e68]: mAmI remembers what mothers shouldn't have to, and simplifies daily life quietly.
+          - article [ref=e69]:
+            - generic [ref=e70]: iii.
+            - paragraph [ref=e71]: Human-centered design
+            - heading "Technology that feels human." [level=3] [ref=e72]
+            - paragraph [ref=e73]: Calm, intuitive, emotionally aware. Designed for real life, not perfection.
+          - article [ref=e74]:
+            - generic [ref=e75]: iv.
+            - paragraph [ref=e76]: Trust & privacy
+            - heading "Support only works when it feels safe." [level=3] [ref=e77]
+            - paragraph [ref=e78]: Privacy protected. Mother always in control.
+      - generic [ref=e79]:
+        - heading "Who it's for." [level=2] [ref=e80]:
+          - text: Who
+          - emphasis [ref=e81]: it's for
+          - text: .
+        - generic [ref=e82]:
+          - paragraph [ref=e83]: For the mother holding more than anyone counts. For the one running on the second cup. For the one whose love is loud and whose tired is quiet.
+          - paragraph [ref=e84]: For 25, for 42, and for every age that doesn't get talked about. For first-time and fourth-time. For the ones who chose, and the ones still figuring out what they did.
+        - note [ref=e85]:
+          - generic [ref=e86]: mAmI is made for adults —
+          - strong [ref=e87]: 18+
+      - generic [ref=e89]:
+        - generic [ref=e90]:
+          - heading "What mAmI is." [level=3] [ref=e91]:
+            - text: What mAmI
+            - emphasis [ref=e92]: is
+            - text: .
+          - list [ref=e93]:
+            - listitem [ref=e94]:
+              - generic [ref=e95]: —
+              - generic [ref=e96]: A quiet companion.
+            - listitem [ref=e97]:
+              - generic [ref=e98]: —
+              - generic [ref=e99]: A soft place for the loud hour.
+            - listitem [ref=e100]:
+              - generic [ref=e101]: —
+              - generic [ref=e102]: A space to think out loud.
+            - listitem [ref=e103]:
+              - generic [ref=e104]: —
+              - generic [ref=e105]: A gentle way to remember everything.
+        - generic [ref=e106]:
+          - heading "What mAmI is not." [level=3] [ref=e107]:
+            - text: What mAmI
+            - emphasis [ref=e108]: is not
+            - text: .
+          - list [ref=e109]:
+            - listitem [ref=e110]:
+              - generic [ref=e111]: —
+              - generic [ref=e112]: Not a medical app.
+            - listitem [ref=e113]:
+              - generic [ref=e114]: —
+              - generic [ref=e115]: Not a therapy platform.
+            - listitem [ref=e116]:
+              - generic [ref=e117]: —
+              - generic [ref=e118]: Not a parenting advice service.
+            - listitem [ref=e119]:
+              - generic [ref=e120]: —
+              - generic [ref=e121]: Not a productivity tool dressed in pink.
+            - listitem [ref=e122]:
+              - generic [ref=e123]: —
+              - generic [ref=e124]: Not one more thing to keep up with.
+      - generic [ref=e125]:
+        - heading "A small team." [level=2] [ref=e126]
+        - paragraph [ref=e128]: We're a small group, building mAmI quietly. We'll introduce ourselves properly soon — once we've finished, slowly, what we're making.
+      - generic [ref=e129]:
+        - paragraph [ref=e130]: When it's ready, we'll write to you.
+        - link "Save my spot" [ref=e131] [cursor=pointer]:
+          - /url: index.html#coda
+          - generic [ref=e133]: Save my spot
+          - img [ref=e135]
+  - contentinfo [ref=e137]:
+    - generic [ref=e138]:
+      - generic [ref=e139]:
+        - link "mAmI — home" [ref=e140] [cursor=pointer]:
+          - /url: index.html
+          - img "mAmI" [ref=e141]
+        - paragraph [ref=e142]: A soft place for the loud hour.
+      - navigation "Footer" [ref=e143]:
+        - generic [ref=e144]:
+          - paragraph [ref=e145]: Explore
+          - list [ref=e146]:
+            - listitem [ref=e147]:
+              - link "Home" [ref=e148] [cursor=pointer]:
+                - /url: index.html
+            - listitem [ref=e149]:
+              - link "About" [ref=e150] [cursor=pointer]:
+                - /url: about.html
+            - listitem [ref=e151]:
+              - link "Features" [ref=e152] [cursor=pointer]:
+                - /url: features.html
+            - listitem [ref=e153]:
+              - link "Contact" [ref=e154] [cursor=pointer]:
+                - /url: contact.html
+        - generic [ref=e155]:
+          - paragraph [ref=e156]: Quiet
+          - list [ref=e157]:
+            - listitem [ref=e158]:
+              - link "Privacy" [ref=e159] [cursor=pointer]:
+                - /url: privacy.html
+            - listitem [ref=e160]:
+              - link "Terms" [ref=e161] [cursor=pointer]:
+                - /url: terms.html
+            - listitem [ref=e162]:
+              - link "Journal" [ref=e163] [cursor=pointer]:
+                - /url: blog.html
+            - listitem [ref=e164]:
+              - link "hello@mami.ae" [ref=e165] [cursor=pointer]:
+                - /url: mailto:hello@mami.ae
+        - generic [ref=e166]:
+          - paragraph [ref=e167]: Elsewhere
+          - list [ref=e168]:
+            - listitem [ref=e169]:
+              - link "Instagram" [ref=e170] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e171]:
+              - link "TikTok" [ref=e172] [cursor=pointer]:
+                - /url: "#"
+    - generic [ref=e173]:
+      - paragraph [ref=e174]: mAmI is not a medical, psychological, or professional advice service.
+      - paragraph [ref=e175]: © 2026 mAmI. All rights, gently reserved.
+      - group "Language" [ref=e176]:
+        - button "EN" [pressed] [ref=e177] [cursor=pointer]
+        - generic [ref=e178]: ·
+        - button "عربي" [ref=e179] [cursor=pointer]
+  - dialog "Cookies" [ref=e180]:
+    - paragraph [ref=e181]:
+      - text: We use small cookies to understand how mAmI is being used, quietly.
+      - link "Read more" [ref=e182] [cursor=pointer]:
+        - /url: privacy.html
+      - text: .
+    - button "Okay" [ref=e183] [cursor=pointer]

@@ -1,0 +1,61 @@
+[     168ms] [WARNING] GSAP target .lotus not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[     169ms] [WARNING] GSAP target .lotus-photo not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[     169ms] [WARNING] GSAP target .lotus-bloom-glow not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[     170ms] [WARNING] GSAP target .side-caption not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[     170ms] [WARNING] GSAP target .eyebrow not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[     170ms] [WARNING] GSAP target .hero-headline .word-inner not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[     170ms] [WARNING] GSAP target .hero-sub .sub-line not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[     170ms] [WARNING] GSAP target .hero-cta .btn-primary, .hero-cta .btn-ghost not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[     170ms] [WARNING] GSAP target .scroll-cue not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[     170ms] [WARNING] GSAP target .descent-h .word-inner not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[     251ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8765/favicon.ico:0
+[   44356ms] [WARNING] GSAP target .lotus not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   44356ms] [WARNING] GSAP target .lotus-photo not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   44356ms] [WARNING] GSAP target .lotus-bloom-glow not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   44356ms] [WARNING] GSAP target .side-caption not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   44357ms] [WARNING] GSAP target .eyebrow not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   44357ms] [WARNING] GSAP target .hero-headline .word-inner not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   44357ms] [WARNING] GSAP target .hero-sub .sub-line not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   44357ms] [WARNING] GSAP target .hero-cta .btn-primary, .hero-cta .btn-ghost not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   44357ms] [WARNING] GSAP target .scroll-cue not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   44357ms] [WARNING] GSAP target .descent-h .word-inner not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   71147ms] [WARNING] GSAP target .lotus not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   71148ms] [WARNING] GSAP target .lotus-photo not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   71148ms] [WARNING] GSAP target .lotus-bloom-glow not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   71148ms] [WARNING] GSAP target .side-caption not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   71148ms] [WARNING] GSAP target .eyebrow not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   71148ms] [WARNING] GSAP target .hero-headline .word-inner not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   71148ms] [WARNING] GSAP target .hero-sub .sub-line not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   71148ms] [WARNING] GSAP target .hero-cta .btn-primary, .hero-cta .btn-ghost not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   71149ms] [WARNING] GSAP target .scroll-cue not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   71149ms] [WARNING] GSAP target .descent-h .word-inner not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   92589ms] [WARNING] GSAP target .lotus not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   92591ms] [WARNING] GSAP target .lotus-photo not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   92591ms] [WARNING] GSAP target .lotus-bloom-glow not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   92592ms] [WARNING] GSAP target .side-caption not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   92592ms] [WARNING] GSAP target .eyebrow not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   92592ms] [WARNING] GSAP target .hero-headline .word-inner not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   92592ms] [WARNING] GSAP target .hero-sub .sub-line not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   92593ms] [WARNING] GSAP target .hero-cta .btn-primary, .hero-cta .btn-ghost not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   92593ms] [WARNING] GSAP target .scroll-cue not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   92593ms] [WARNING] GSAP target .descent-h .word-inner not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   98895ms] [WARNING] GSAP target .lotus not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   98896ms] [WARNING] GSAP target .lotus-photo not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   98896ms] [WARNING] GSAP target .lotus-bloom-glow not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   98896ms] [WARNING] GSAP target .side-caption not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   98896ms] [WARNING] GSAP target .eyebrow not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   98896ms] [WARNING] GSAP target .hero-headline .word-inner not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   98897ms] [WARNING] GSAP target .hero-sub .sub-line not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   98897ms] [WARNING] GSAP target .hero-cta .btn-primary, .hero-cta .btn-ghost not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   98897ms] [WARNING] GSAP target .scroll-cue not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[   98897ms] [WARNING] GSAP target .descent-h .word-inner not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[  104751ms] [WARNING] GSAP target .lotus not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[  104751ms] [WARNING] GSAP target .lotus-photo not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[  104751ms] [WARNING] GSAP target .lotus-bloom-glow not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[  104751ms] [WARNING] GSAP target .side-caption not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[  104751ms] [WARNING] GSAP target .eyebrow not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[  104751ms] [WARNING] GSAP target .hero-headline .word-inner not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[  104752ms] [WARNING] GSAP target .hero-sub .sub-line not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[  104752ms] [WARNING] GSAP target .hero-cta .btn-primary, .hero-cta .btn-ghost not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[  104752ms] [WARNING] GSAP target .scroll-cue not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9
+[  104752ms] [WARNING] GSAP target .descent-h .word-inner not found. https://gsap.com @ https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js:9

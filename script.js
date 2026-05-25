@@ -273,6 +273,7 @@
   gsap.set(".side-caption", { opacity: 0 });
   gsap.set(".eyebrow", { y: 14, opacity: 0 });
   gsap.set(".hero-headline .word-inner", { yPercent: 110 });
+  gsap.set(".hero-mark", { y: 10, opacity: 0 });
   gsap.set(".hero-sub .sub-line", { y: 14, opacity: 0 });
   gsap.set(".hero-cta .btn-primary, .hero-cta .btn-ghost", { y: 20, opacity: 0 });
   gsap.set(".scroll-cue", { opacity: 0 });
@@ -318,8 +319,9 @@
                                 { yPercent: 0, duration: 0.9, stagger: 0.06, ease: "expo.out" }, 0.7)
       .to(".hero-headline .line:nth-child(2) .word-inner",
                                 { yPercent: 0, duration: 0.9, stagger: 0.06, ease: "expo.out" }, 0.85)
+      .to(".hero-mark",         { y: 0, opacity: 1, duration: 0.8 }, 1.15)
       .to(".hero-sub .sub-line",
-                                { y: 0, opacity: 1, duration: 0.7, stagger: 0.08 }, 1.35)
+                                { y: 0, opacity: 1, duration: 0.7, stagger: 0.08 }, 1.45)
       .to(".hero-cta .btn-primary, .hero-cta .btn-ghost",
                                 { y: 0, opacity: 1, duration: 0.7, stagger: 0.08 }, 1.7)
       .to(".scroll-cue",       { opacity: 1, duration: 0.6 }, 2.1);
@@ -381,7 +383,7 @@
 
     if (prefersReducedMotion) {
       setLotusState(1);
-      gsap.set(".side-caption, .hero-sub .sub-line, .hero-cta .btn-primary, .hero-cta .btn-ghost, .eyebrow, .scroll-cue",
+      gsap.set(".side-caption, .hero-mark, .hero-sub .sub-line, .hero-cta .btn-primary, .hero-cta .btn-ghost, .eyebrow, .scroll-cue",
                { opacity: 1, y: 0 });
       gsap.set(".hero-headline .word-inner", { yPercent: 0 });
       gsap.set(".lotus, .lotus-photo", { scale: 1, opacity: 1 });
@@ -513,6 +515,48 @@
       .to(".line-lotus", { scale: 0.94, opacity: 0.92, duration: 0.3 }, 0.85);
 
     return tl;
+  }
+
+  /* ──────────────────────────────────────────────────────────────
+     INTERLUDE — THE SOFT HOUR
+     A wordless bridge between Act II (Weight) and Act III (Quiet
+     Hour). The watercolor paints in via a radial mask whose radius
+     grows with scroll progress. Sets a CSS custom property
+     --reveal: 0 → 1 on the .interlude.soft-hour element, which
+     the mask in styles.css consumes.
+     ────────────────────────────────────────────────────────────── */
+  function buildSoftHourInterlude() {
+    const stage = $(".interlude.soft-hour");
+    if (!stage) return;
+    const wrap = stage.querySelector(".soft-hour-portrait-wrap");
+    const line = stage.querySelector(".soft-hour-line");
+    if (!wrap || !line) return;
+
+    if (prefersReducedMotion) {
+      stage.style.setProperty("--reveal", "1");
+      gsap.set([wrap, line], { opacity: 1, y: 0 });
+      return;
+    }
+
+    gsap.set(wrap, { opacity: 0, y: 24 });
+    gsap.set(line, { opacity: 0, y: 18 });
+    stage.style.setProperty("--reveal", "0");
+
+    // Paint-in: tied to scroll progress through the interlude.
+    // The mask grows as user scrolls from "top 80%" to "center 45%".
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: stage,
+        start: "top 80%",
+        end: "center 45%",
+        scrub: 1.2,
+        onUpdate: (self) => {
+          stage.style.setProperty("--reveal", self.progress.toFixed(3));
+        },
+      },
+    })
+      .to(wrap, { opacity: 1, y: 0, duration: 1, ease: "none" }, 0)
+      .to(line, { opacity: 1, y: 0, duration: 0.8, ease: "none" }, 0.45);
   }
 
   function buildDescentAct() {
@@ -1456,20 +1500,28 @@
       );
     });
 
-    // 2) Page-hero — soft entrance, then drift up + fade as user scrolls past
+    // 2) Page-hero — soft entrance, then drift up + fade as user scrolls past.
+    // The scrub uses fromTo with explicit start values + immediateRender:false
+    // so it doesn't capture the entrance's from-state (opacity:0) as its
+    // own start — that previously caused the hero to vanish whenever the
+    // user scrolled past and came back to scroll position 0.
     $$(".page-hero").forEach((hero) => {
       claim(hero);
       gsap.from(hero, { y: 30, opacity: 0, duration: 1.0, ease: "power3.out" });
-      gsap.to(hero, {
-        y: -60, opacity: 0.5,
-        ease: "none",
-        scrollTrigger: {
-          trigger: hero,
-          start: "top top",
-          end: "bottom top",
-          scrub: 1.2,
-        },
-      });
+      gsap.fromTo(hero,
+        { y: 0, opacity: 1 },
+        {
+          y: -60, opacity: 0.5,
+          ease: "none",
+          immediateRender: false,
+          scrollTrigger: {
+            trigger: hero,
+            start: "top top",
+            end: "bottom top",
+            scrub: 1.2,
+          },
+        }
+      );
     });
 
     // 3) Feature rows — alternating slide-in + subtle parallax on the visual
@@ -1552,7 +1604,7 @@
       });
     });
 
-    // 8) Legal pages — stagger h2 headings as user scrolls through
+    // 9) Legal pages — stagger h2 headings as user scrolls through
     if ($(".legal")) {
       $$(".legal h2").forEach((h) => {
         gsap.from(h, {
@@ -1653,6 +1705,7 @@
     // Build the hero / acts now — they sit underneath the splash at rest.
     buildBloomAct();
     buildWeightAct();
+    buildSoftHourInterlude();
     buildDescentAct();
     buildNightCanvas();
     buildCompanionAct();

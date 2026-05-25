@@ -333,20 +333,52 @@ body.theme-night .cursor-halo { opacity: 0.95; }
   line-height: 1;
 }
 .brand-logo {
-  /* Show the full composed brand mark (lotus + "mAmi" + flourish) —
-     same treatment as the footer, just at header scale. */
-  width: 84px;
-  height: 84px;
+  /* The lotus.png is a composed mark (lotus + "mAmi" wordmark + flourish).
+     In the header we want only the crystalline lotus to read as an icon,
+     so we mask out the bottom (wordmark + flourish) and pair it with the
+     Fraunces text wordmark to its right.
+
+     The lotus shape in the source PNG extends down to ~58% of the canvas
+     height, so the solid-black portion of the mask goes to 60% (with a
+     soft fade to 70% transparent) — that fully reveals the lotus without
+     clipping its lower petals, while still hiding the baked-in wordmark
+     and flourish below it. */
+  width: 64px;
+  height: 64px;
   object-fit: contain;
-  object-position: center center;
+  object-position: center top;
   filter: contrast(1.05) saturate(0.9);
   transition: transform 500ms var(--ease);
+  -webkit-mask-image: linear-gradient(to bottom,
+    black 0%, black 60%, transparent 70%);
+  mask-image: linear-gradient(to bottom,
+    black 0%, black 60%, transparent 70%);
 }
 .brand:hover .brand-logo { transform: rotate(-6deg); }
-/* The lotus.png already carries the "mAmi" wordmark, so the separate
-   Fraunces text is now redundant — hide it everywhere it sits next
-   to the logo (header, mobile drawer, all subpage headers). */
-.brand-wordmark { display: none; }
+/* The lotus icon now stands as the icon-only mark; the Fraunces
+   wordmark sits beside it as a quiet typographic lockup. */
+.brand-wordmark {
+  display: inline-block;
+  margin-left: 10px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "wght" 380, "SOFT" 60, "WONK" 0;
+  font-size: 24px;
+  letter-spacing: -0.01em;
+  color: var(--plum, #6E3E50);
+  line-height: 1;
+  transition: color 600ms var(--ease);
+}
+/* In the footer the full composed mark (lotus + wordmark + flourish)
+   reads beautifully at large scale, so undo the header mask there. */
+.brand-footer .brand-logo {
+  -webkit-mask-image: none;
+  mask-image: none;
+  width: auto;
+  height: auto;
+  object-position: center center;
+}
+.brand-footer .brand-wordmark { display: none; }
 
 .nav {
   display: flex; align-items: center; gap: 28px;
@@ -685,15 +717,20 @@ body.theme-night .cursor-halo { opacity: 0.95; }
   filter: blur(28px);
 }
 /* The supplied logo PNG contains the lotus + an "mAmi" wordmark + a
-   decorative branch beneath. The hero already has its own <h1>
-   headline below the lotus, so we softly mask the bottom of the photo
-   to show ONLY the crystalline lotus and let the headline own the
-   typographic space below it. */
+   decorative branch beneath. The hero has its own typography below
+   the lotus (decorative .hero-mark + .hero-sub), so we mask the photo
+   tightly to show ONLY the crystalline lotus and let the typographic
+   space below it stay clean. */
 .lotus-wrap.has-photo .lotus-photo {
+  /* Tight cut just past the lotus shape: solid through 58% (full lotus
+     including bottom petal), sharp fade to transparent by 61%. The
+     baked-in "mAmi" wordmark + decorative heart/flourish sit at ~62%+
+     and are fully hidden. The fade window is intentionally narrow to
+     avoid letting any wordmark pixels bleed through. */
   -webkit-mask-image: linear-gradient(to bottom,
-    black 0%, black 54%, transparent 72%);
+    black 0%, black 58%, transparent 61%);
   mask-image: linear-gradient(to bottom,
-    black 0%, black 54%, transparent 72%);
+    black 0%, black 58%, transparent 61%);
   filter: none; /* the photo carries its own glow */
 }
 .lotus-group { transform-origin: 300px 300px; }
@@ -721,6 +758,27 @@ body.theme-night .cursor-halo { opacity: 0.95; }
   font-variation-settings: "opsz" 144, "wght" 360, "SOFT" 70, "WONK" 0;
 }
 .hero-headline .line { display: block; }
+
+/* Decorative wordmark — a quiet, oversized italic "mAmi" that sits as
+   a soft title above the tagline. Was previously bleeding through from
+   the lotus PNG; now lifted out as its own typographic element so the
+   sub-line copy below stays on a clean background. */
+.hero-mark {
+  margin: 4px 0 18px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "wght" 320, "SOFT" 90, "WONK" 1;
+  font-size: clamp(40px, 6vw, 88px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: color-mix(in srgb, var(--plum, #6E3E50) 55%, transparent);
+  text-align: center;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+.hero-mark span { display: inline-block; }
+
 .hero-sub {
   font-size: clamp(15px, 1.4vw, 18px);
   line-height: 1.7;
@@ -2068,7 +2126,6 @@ body.lang-ar .page-cta-reassure {
   font-variation-settings: normal;
 }
 
-
 /* =================================================================
    FEATURE PAGE — alternating sections
    ================================================================= */
@@ -2687,6 +2744,111 @@ body.lang-ar .cookie-banner { font-family: var(--sans-ar); }
   .open-grid { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; }
   .side-caption { display: none; }
+}
+
+/* =================================================================
+   INTERLUDE — THE SOFT HOUR
+   A wordless bridge between Act II (Weight) and Act III (Quiet Hour).
+   The watercolor paints in via a radial mask whose radius grows with
+   scroll progress (driven by --reveal: 0 → 1 from GSAP ScrollTrigger).
+   The soft mask edge mimics the watercolor's own bleeding edges.
+   ================================================================= */
+.interlude.soft-hour {
+  --reveal: 0;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 12vh 6vw;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%,
+      color-mix(in srgb, var(--blush) 32%, var(--ivory)) 0%,
+      var(--ivory) 70%),
+    var(--ivory);
+  overflow: hidden;
+}
+
+.soft-hour-portrait-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+
+.soft-hour-portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  /* Sit-in-background opacity — image is a soft wash, not a focal point. */
+  opacity: 0.38;
+  /* Radial mask whose radius is driven by --reveal (0 → 1).
+     At 0: no visible image. At 1: ~95% visible with soft feather. */
+  -webkit-mask-image: radial-gradient(
+    ellipse 110% 110% at 50% 50%,
+    #000 calc(var(--reveal) * 60%),
+    transparent calc(var(--reveal) * 60% + 30%)
+  );
+          mask-image: radial-gradient(
+    ellipse 110% 110% at 50% 50%,
+    #000 calc(var(--reveal) * 60%),
+    transparent calc(var(--reveal) * 60% + 30%)
+  );
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+          mask-size: 100% 100%;
+}
+
+.soft-hour-stage {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: min(720px, 92vw);
+  text-align: center;
+}
+
+.soft-hour-line {
+  font-family: var(--serif);
+  font-style: normal;
+  font-size: clamp(26px, 3.6vw, 42px);
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  color: var(--plum);
+  text-align: center;
+  max-width: 24ch;
+  margin: 0;
+  opacity: 0;
+  /* Soft ivory glow ensures the line stays legible above the watercolor wash. */
+  text-shadow:
+    0 1px 14px var(--ivory),
+    0 0 28px color-mix(in srgb, var(--ivory) 75%, transparent);
+  will-change: opacity, transform;
+}
+
+.soft-hour-line em {
+  font-style: italic;
+  font-feature-settings: "ss01" 1;
+  color: var(--plum-deep);
+}
+
+@media (max-width: 720px) {
+  .interlude.soft-hour { min-height: 80vh; padding: 6vh 6vw; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interlude.soft-hour { --reveal: 1; }
+  .soft-hour-portrait-wrap,
+  .soft-hour-line { opacity: 1 !important; transform: none !important; }
 }
 
 @media (max-width: 720px) {

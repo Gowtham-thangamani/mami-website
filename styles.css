@@ -334,15 +334,14 @@ body.theme-night .cursor-halo { opacity: 0.95; }
 }
 .brand-logo {
   /* The lotus.png is a composed mark (lotus + "mAmi" wordmark + flourish).
-     In the header we want only the crystalline lotus to read as an icon,
-     so we mask out the bottom (wordmark + flourish) and pair it with the
-     Fraunces text wordmark to its right.
-
-     The lotus shape in the source PNG extends down to ~58% of the canvas
-     height, so the solid-black portion of the mask goes to 60% (with a
-     soft fade to 70% transparent) — that fully reveals the lotus without
-     clipping its lower petals, while still hiding the baked-in wordmark
-     and flourish below it. */
+     We want only the lotus icon to read, paired with the Fraunces text
+     wordmark beside it. Measured against the source PNG:
+       · lotus shape ends at ~52% of canvas height
+       · "mAmi" wordmark starts at ~58%
+       · flourish/heart starts at ~72%
+     So the mask is solid through 54% (full lotus + a sliver of padding)
+     and sharply transparent by 57% — leaves the lotus intact while
+     cutting off cleanly before the wordmark can show through. */
   width: 64px;
   height: 64px;
   object-fit: contain;
@@ -350,9 +349,9 @@ body.theme-night .cursor-halo { opacity: 0.95; }
   filter: contrast(1.05) saturate(0.9);
   transition: transform 500ms var(--ease);
   -webkit-mask-image: linear-gradient(to bottom,
-    black 0%, black 60%, transparent 70%);
+    black 0%, black 54%, transparent 57%);
   mask-image: linear-gradient(to bottom,
-    black 0%, black 60%, transparent 70%);
+    black 0%, black 54%, transparent 57%);
 }
 .brand:hover .brand-logo { transform: rotate(-6deg); }
 /* The lotus icon now stands as the icon-only mark; the Fraunces
@@ -369,14 +368,16 @@ body.theme-night .cursor-halo { opacity: 0.95; }
   line-height: 1;
   transition: color 600ms var(--ease);
 }
-/* In the footer the full composed mark (lotus + wordmark + flourish)
-   reads beautifully at large scale, so undo the header mask there. */
+/* Footer: same lotus-only treatment as the header so the brand mark
+   reads consistently across the site. The mask cuts cleanly at the
+   lotus boundary; the wordmark span isn't rendered in the footer
+   markup, but the rule below ensures it stays hidden if added later. */
 .brand-footer .brand-logo {
-  -webkit-mask-image: none;
-  mask-image: none;
-  width: auto;
-  height: auto;
-  object-position: center center;
+  -webkit-mask-image: linear-gradient(to bottom,
+    black 0%, black 54%, transparent 57%);
+  mask-image: linear-gradient(to bottom,
+    black 0%, black 54%, transparent 57%);
+  object-position: center top;
 }
 .brand-footer .brand-wordmark { display: none; }
 

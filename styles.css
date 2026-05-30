@@ -3047,14 +3047,18 @@ body.lang-ar .cookie-banner { font-family: var(--sans-ar); }
    Chat feature — hero iPhone chat preview
    Two-column split: copy left, big iPhone right.
    Stacks vertically on mobile (carry-split pattern).
+   align-items:start keeps the copy aligned with the top of
+   the phone (rather than centered across its full ~600px
+   height, which would visually push the section tall).
    ============================================ */
 .chat-feature {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(40px, 6vw, 96px);
-  align-items: center;
+  align-items: start;
   max-width: 1140px;
-  margin: 0 auto clamp(80px, 12vh, 140px);
+  margin: 0 auto clamp(60px, 10vh, 100px);
+  padding-top: clamp(20px, 4vh, 40px);
 }
 .chat-copy {
   text-align: left;
@@ -3142,12 +3146,15 @@ body.lang-ar .cookie-banner { font-family: var(--sans-ar); }
   letter-spacing: -0.005em;
 }
 
-/* iPhone frame — realistic, branded plum/cream palette */
+/* iPhone frame — realistic, branded plum/cream palette.
+   --phone-w controls the width (and therefore the height via
+   aspect-ratio). Kept compact on desktop so a feature section
+   never grows so tall it bleeds into the next act below. */
 .chat-phone {
-  --phone-w: clamp(260px, 26vw, 320px);
+  --phone-w: clamp(220px, 20vw, 270px);
   margin: 0;
   padding: 0;
-  justify-self: start;
+  justify-self: center;
   width: var(--phone-w);
 }
 .chat-phone-frame {

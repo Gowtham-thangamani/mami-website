@@ -2409,6 +2409,32 @@ body.lang-ar .not-grid li { font-family: var(--serif-ar); font-variation-setting
 /* =================================================================
    BRAND STATEMENT callout (About page) — quiet positioning block
    ================================================================= */
+/* Carry portrait — wordless image of a child holding the memory of
+   mother+child at sunset. Sits between the page-hero and the brand
+   statement on About. Static, no scrub/parallax (respects the calm
+   subpage rules). mix-blend-mode:multiply makes the PNG's white
+   background read as the cream page, so no transparent re-export
+   is needed. */
+.carry-portrait {
+  display: block;
+  margin: clamp(48px, 8vh, 96px) auto;
+  padding: 0;
+  max-width: 520px;
+  text-align: center;
+}
+.carry-portrait-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 78vh;
+  object-fit: contain;
+  margin: 0 auto;
+  /* The source PNG ships with a white background; multiply lets the
+     cream page color show through the white pixels while preserving
+     the dark double-exposure tones of the child portrait. */
+  mix-blend-mode: multiply;
+}
+
 .brand-statement {
   margin: clamp(48px, 8vh, 96px) 0;
   padding: clamp(40px, 6vh, 72px) clamp(20px, 4vw, 56px);

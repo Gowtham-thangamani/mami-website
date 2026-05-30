@@ -3305,7 +3305,33 @@ body.lang-ar .cookie-banner { font-family: var(--sans-ar); }
 }
 
 @media (max-width: 920px) {
-  .phones-row { grid-template-columns: 1fr; max-width: 360px; }
+  /* Phones become a horizontal swipe carousel on mobile/tablet
+     instead of a single-column stack. One phone fills most of the
+     viewport with the next peeking from the right edge as a visual
+     hint that there's more to swipe to. scroll-snap-type makes the
+     gesture feel native — each swipe lands on the next phone. */
+  .phones-row {
+    display: flex;
+    grid-template-columns: none;
+    max-width: none;
+    gap: clamp(16px, 4vw, 28px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--gutter);
+    padding: 0 var(--gutter) 16px;
+    margin-inline: calc(-1 * var(--gutter));
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+  .phones-row::-webkit-scrollbar { display: none; } /* WebKit */
+  .phone-mockup {
+    flex: 0 0 min(84vw, 320px);
+    scroll-snap-align: center;
+  }
+  .phone-frame {
+    max-width: 100%;
+  }
+
   .moms-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 480px) {

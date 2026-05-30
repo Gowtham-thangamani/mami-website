@@ -647,8 +647,8 @@
         <h2 class="display-h" data-ar-html="مَامي، في جيبك.">
           mAmI, in your pocket.
         </h2>
-        <p class="app-lede" data-ar="ثلاث شاشاتٍ هادئة، صُنعت لتُصغي قبل أن تطلبَ شيئًا.">
-          Three quiet screens, made to listen before asking anything of you.
+        <p class="app-lede" data-ar="شاشاتٌ هادئة، صُنعت لتُصغي قبل أن تطلبَ شيئًا.">
+          Quiet screens, made to listen before asking anything of you.
         </p>
       </header>
 
@@ -670,7 +670,7 @@
           <div class="store-cta" role="group" aria-label="Download mAmI">
             <a class="store-badge store-badge-apple" href="#coda" aria-label="Download on the App Store">
               <svg class="store-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M17.4 12.6c0-2.8 2.3-4.1 2.4-4.2-1.3-1.9-3.3-2.2-4-2.2-1.7-.2-3.3 1-4.2 1-.9 0-2.2-1-3.6-.9-1.9 0-3.6 1.1-4.6 2.7-2 3.4-.5 8.4 1.4 11.2.9 1.3 2 2.9 3.5 2.8 1.4-.1 1.9-.9 3.6-.9 1.7 0 2.2.9 3.6.9 1.5 0 2.5-1.4 3.4-2.7.5-.8.9-1.6 1.2-2.5-3.1-1.2-3.7-5.2-3.7-5.2zM14.6 4.6c.8-1 1.3-2.3 1.2-3.6-1.1.1-2.4.7-3.2 1.7-.7.8-1.4 2.2-1.2 3.4 1.2.1 2.4-.6 3.2-1.5z"/>
+                <path d="M17.05 12.04c-.03-2.79 2.28-4.13 2.39-4.2-1.3-1.91-3.33-2.17-4.05-2.2-1.73-.18-3.37 1.02-4.25 1.02-.87 0-2.22-.99-3.65-.97-1.88.03-3.61 1.09-4.57 2.77-1.95 3.38-.5 8.39 1.4 11.14.93 1.34 2.04 2.85 3.49 2.79 1.4-.06 1.93-.91 3.63-.91 1.69 0 2.18.91 3.66.88 1.51-.03 2.47-1.37 3.39-2.72 1.07-1.56 1.51-3.07 1.53-3.15-.03-.01-2.94-1.13-2.97-4.45zM14.27 4.05c.77-.94 1.29-2.24 1.15-3.54-1.11.05-2.46.74-3.26 1.67-.71.83-1.35 2.15-1.18 3.42 1.24.1 2.51-.62 3.29-1.55z"/>
               </svg>
               <span class="store-label">
                 <span class="store-pre">Download on the</span>
@@ -679,11 +679,11 @@
             </a>
 
             <a class="store-badge store-badge-google" href="#coda" aria-label="Get it on Google Play">
-              <svg class="store-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M3.6 2.4c-.3.3-.5.8-.5 1.4v16.4c0 .6.2 1.1.5 1.4l.1.1L13 12v-.2L3.7 2.3l-.1.1z" fill="#00D7FE"/>
-                <path d="M16.2 15.2l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.7 0 2.3l-3.8 2.2-.1-.2z" fill="#FFCE00"/>
-                <path d="M16.3 15.1L13 11.9 3.6 21.6c.4.4 1 .4 1.7.1l11-6.6" fill="#FF443A"/>
-                <path d="M16.3 8.7L5.3 2.4c-.7-.4-1.3-.3-1.7.1l9.4 9.4 3.3-3.2z" fill="#00F076"/>
+              <svg class="store-icon" viewBox="0 0 512 512" aria-hidden="true">
+                <path fill="#00C3FF" d="M61 30c-7 7-11 18-11 33v386c0 14 4 26 11 33l1 1 217-217v-19L62 29l-1 1z"/>
+                <path fill="#FFC400" d="M349 296l-72-72v-19l72-72 2 1 86 48c25 14 25 36 0 50l-86 48-2 1z"/>
+                <path fill="#FF3A44" d="M351 295l-73-73L61 442c8 9 22 10 38 1l252-148"/>
+                <path fill="#00DE7A" d="M351 148L99 5C83-4 69-3 61 5l217 217 73-74z"/>
               </svg>
               <span class="store-label">
                 <span class="store-pre">Get it on</span>
@@ -772,83 +772,131 @@
         </figure>
       </section>
 
-      <div class="phones-row">
+      <!-- ============================================== -->
+      <!-- TASKS FEATURE — phone with the held list        -->
+      <!-- ============================================== -->
+      <section class="chat-feature fade-up" aria-label="The list, already remembered">
+        <div class="chat-copy">
+          <p class="chat-eyebrow" data-ar="قائمةٌ تُذكَر عنك">A list, already remembered</p>
+          <h3 class="chat-h" data-ar-html="القائمةُ الصغيرة<br/>التي لا تنتهي — محمولة.">
+            The small, endless list —<br/>held for you.
+          </h3>
+          <p class="chat-body" data-ar="المواعيد، الأدوية، وجبةُ الغد، الاتصال الذي وعدتِ به. مَامي تحمل ثقلَ التذكّر — حتى لا تحمليه مرّتين.">
+            Appointments, refills, the snack for tomorrow, the call
+            you promised. mAmI carries the weight of remembering —
+            so you don't have to do it twice.
+          </p>
+        </div>
 
-        <figure class="phone-mockup phone-1 fade-up">
-          <div class="phone-frame">
-            <div class="phone-screen">
-              <!-- PLACEHOLDER: replace with real chat screenshot, or keep -->
-              <div class="screen-content screen-chat">
-                <div class="screen-top">
-                  <img class="screen-logo" src="assets/lotus.png" alt="" width="120" height="120" decoding="async" />
-                  <span class="screen-name">mAmI</span>
-                </div>
-                <div class="chat-bubble bubble-in">It's a lot today, isn't it?</div>
-                <div class="chat-bubble bubble-out">yeah</div>
-                <div class="chat-bubble bubble-in">I'm here. Take a breath.</div>
-                <div class="chat-bubble bubble-typing"><span></span><span></span><span></span></div>
+        <figure class="chat-phone" aria-hidden="true">
+          <div class="chat-phone-frame">
+            <span class="chat-phone-notch"></span>
+            <div class="chat-phone-statusbar">
+              <span class="csb-time">9:41</span>
+              <span class="csb-right">
+                <svg class="csb-signal" viewBox="0 0 18 12" fill="none">
+                  <rect x="1" y="8" width="2" height="3" rx="0.5" fill="currentColor"/>
+                  <rect x="5" y="6" width="2" height="5" rx="0.5" fill="currentColor"/>
+                  <rect x="9" y="4" width="2" height="7" rx="0.5" fill="currentColor"/>
+                  <rect x="13" y="2" width="2" height="9" rx="0.5" fill="currentColor"/>
+                </svg>
+                <svg class="csb-wifi" viewBox="0 0 16 12" fill="none">
+                  <path d="M8 10.5l1.2-1.2a1.7 1.7 0 00-2.4 0L8 10.5z" fill="currentColor"/>
+                  <path d="M3.5 6.5a6.36 6.36 0 019 0M0.5 3.5a10.6 10.6 0 0115 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+                <span class="csb-battery"><span class="csb-battery-fill"></span></span>
+              </span>
+            </div>
+
+            <div class="phone-screen-header">
+              <span class="psh-eyebrow">Today</span>
+              <h4 class="psh-title">A quieter list</h4>
+              <span class="psh-sub">2 done · 3 for later, if you can</span>
+            </div>
+
+            <div class="phone-screen-body phone-screen-tasks">
+              <ul class="ptl">
+                <li class="ptl-item is-done"><span class="ptl-check"></span>School pickup at 3</li>
+                <li class="ptl-item is-done"><span class="ptl-check"></span>Refill her prescription</li>
+                <li class="ptl-item"><span class="ptl-check"></span>Call mum back</li>
+                <li class="ptl-item"><span class="ptl-check"></span>Pack snack for tomorrow</li>
+                <li class="ptl-item is-soft"><span class="ptl-check"></span>Drink water — when you can</li>
+              </ul>
+            </div>
+
+            <div class="phone-screen-foot">
+              <span class="psf-text">mAmI is holding the rest. ♥</span>
+            </div>
+
+            <span class="chat-phone-home" aria-hidden="true"></span>
+          </div>
+        </figure>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- CHECK-IN FEATURE — daily mood check-in         -->
+      <!-- ============================================== -->
+      <section class="chat-feature fade-up" aria-label="A gentle question, asked kindly">
+        <div class="chat-copy">
+          <p class="chat-eyebrow" data-ar="سؤالٌ لطيف، كلّ يوم">A gentle question, daily</p>
+          <h3 class="chat-h" data-ar-html="كيف حالكِ،<br/><em>حقًّا</em>؟">
+            How are you,<br/><em>really</em>?
+          </h3>
+          <p class="chat-body" data-ar="فحصٌ هادئ، مرّةً في اليوم. لا تتبّع، لا سلاسلَ ينبغي حفظها. فقط سؤالٌ لطيف، ومساحةٌ لجوابكِ — إن أردتِ.">
+            One quiet check-in a day. No tracking, no streaks to keep.
+            Just a soft question that asks how you actually are — and
+            a space for the answer, if you want to leave one.
+          </p>
+        </div>
+
+        <figure class="chat-phone" aria-hidden="true">
+          <div class="chat-phone-frame">
+            <span class="chat-phone-notch"></span>
+            <div class="chat-phone-statusbar">
+              <span class="csb-time">9:41</span>
+              <span class="csb-right">
+                <svg class="csb-signal" viewBox="0 0 18 12" fill="none">
+                  <rect x="1" y="8" width="2" height="3" rx="0.5" fill="currentColor"/>
+                  <rect x="5" y="6" width="2" height="5" rx="0.5" fill="currentColor"/>
+                  <rect x="9" y="4" width="2" height="7" rx="0.5" fill="currentColor"/>
+                  <rect x="13" y="2" width="2" height="9" rx="0.5" fill="currentColor"/>
+                </svg>
+                <svg class="csb-wifi" viewBox="0 0 16 12" fill="none">
+                  <path d="M8 10.5l1.2-1.2a1.7 1.7 0 00-2.4 0L8 10.5z" fill="currentColor"/>
+                  <path d="M3.5 6.5a6.36 6.36 0 019 0M0.5 3.5a10.6 10.6 0 0115 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+                <span class="csb-battery"><span class="csb-battery-fill"></span></span>
+              </span>
+            </div>
+
+            <div class="phone-screen-header">
+              <span class="psh-eyebrow">Daily check-in</span>
+              <h4 class="psh-title">A small breath, before the day.</h4>
+            </div>
+
+            <div class="phone-screen-body phone-screen-checkin">
+              <p class="pc-question">How are you, <em>really</em>?</p>
+              <div class="pc-mood">
+                <span class="pc-dot"></span>
+                <span class="pc-dot"></span>
+                <span class="pc-dot is-on"></span>
+                <span class="pc-dot"></span>
+                <span class="pc-dot"></span>
+              </div>
+              <div class="pc-mood-labels"><span>heavy</span><span>okay</span><span>light</span></div>
+              <div class="pc-note">
+                <span class="pc-note-placeholder">A few words, if you want…</span>
               </div>
             </div>
-          </div>
-          <figcaption class="phone-caption" data-ar="محادثة هادئة، حين تحتاجين الإصغاء.">
-            A quiet conversation, when you need to be heard.
-          </figcaption>
-        </figure>
 
-        <figure class="phone-mockup phone-2 fade-up">
-          <div class="phone-frame">
-            <div class="phone-screen">
-              <!-- PLACEHOLDER: replace with real tasks screenshot, or keep -->
-              <div class="screen-content screen-tasks">
-                <div class="screen-top screen-top-tasks">
-                  <img class="screen-logo" src="assets/lotus.png" alt="" width="120" height="120" decoding="async" />
-                  <span class="screen-eyebrow">Today</span>
-                </div>
-                <ul class="task-list">
-                  <li class="task-item is-done"><span class="task-check"></span>School pickup at 3</li>
-                  <li class="task-item is-done"><span class="task-check"></span>Refill her prescription</li>
-                  <li class="task-item"><span class="task-check"></span>Call mum back</li>
-                  <li class="task-item"><span class="task-check"></span>Pack snack for tomorrow</li>
-                  <li class="task-item is-soft"><span class="task-check"></span>Drink water</li>
-                </ul>
-              </div>
+            <div class="phone-screen-foot">
+              <span class="psf-button">Save quietly</span>
             </div>
-          </div>
-          <figcaption class="phone-caption" data-ar="القائمة الصغيرة التي لا تنتهي، محمولةٌ بدلاً عنك.">
-            The small, endless list — held for you.
-          </figcaption>
-        </figure>
 
-        <figure class="phone-mockup phone-3 fade-up">
-          <div class="phone-frame">
-            <div class="phone-screen">
-              <!-- PLACEHOLDER: replace with real check-in screenshot, or keep -->
-              <div class="screen-content screen-checkin">
-                <div class="screen-top">
-                  <img class="screen-logo" src="assets/lotus.png" alt="" width="120" height="120" decoding="async" />
-                  <span class="screen-eyebrow">Daily check-in</span>
-                </div>
-                <p class="checkin-q">How are you, really?</p>
-                <div class="mood-row">
-                  <span class="mood-dot"></span>
-                  <span class="mood-dot"></span>
-                  <span class="mood-dot is-on"></span>
-                  <span class="mood-dot"></span>
-                  <span class="mood-dot"></span>
-                </div>
-                <div class="mood-labels">
-                  <span>heavy</span><span>okay</span><span>light</span>
-                </div>
-                <div class="checkin-wave" aria-hidden="true"></div>
-              </div>
-            </div>
+            <span class="chat-phone-home" aria-hidden="true"></span>
           </div>
-          <figcaption class="phone-caption" data-ar="سؤالٌ لطيفٌ يُطرَح برفق. كلّ يوم.">
-            A gentle question, asked kindly. Every day.
-          </figcaption>
         </figure>
-
-      </div>
+      </section>
 
       <!-- Photo strip — placeholders ready for real photography -->
       <header class="moms-header">
@@ -1100,6 +1148,31 @@
           <img class="brand-logo brand-logo-footer" src="assets/lotus.png" alt="mAmI" width="220" height="220" />
         </a>
         <p class="footer-tag" data-ar="مكانٌ ناعم لساعةٍ صاخبة.">A soft place for the loud hour.</p>
+
+        <div class="store-cta store-cta-footer" role="group" aria-label="Download mAmI">
+          <a class="store-badge store-badge-apple" href="#coda" aria-label="Download on the App Store">
+            <svg class="store-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.05 12.04c-.03-2.79 2.28-4.13 2.39-4.2-1.3-1.91-3.33-2.17-4.05-2.2-1.73-.18-3.37 1.02-4.25 1.02-.87 0-2.22-.99-3.65-.97-1.88.03-3.61 1.09-4.57 2.77-1.95 3.38-.5 8.39 1.4 11.14.93 1.34 2.04 2.85 3.49 2.79 1.4-.06 1.93-.91 3.63-.91 1.69 0 2.18.91 3.66.88 1.51-.03 2.47-1.37 3.39-2.72 1.07-1.56 1.51-3.07 1.53-3.15-.03-.01-2.94-1.13-2.97-4.45zM14.27 4.05c.77-.94 1.29-2.24 1.15-3.54-1.11.05-2.46.74-3.26 1.67-.71.83-1.35 2.15-1.18 3.42 1.24.1 2.51-.62 3.29-1.55z"/>
+            </svg>
+            <span class="store-label">
+              <span class="store-pre">Download on the</span>
+              <span class="store-name">App Store</span>
+            </span>
+          </a>
+
+          <a class="store-badge store-badge-google" href="#coda" aria-label="Get it on Google Play">
+            <svg class="store-icon" viewBox="0 0 512 512" aria-hidden="true">
+              <path fill="#00C3FF" d="M61 30c-7 7-11 18-11 33v386c0 14 4 26 11 33l1 1 217-217v-19L62 29l-1 1z"/>
+              <path fill="#FFC400" d="M349 296l-72-72v-19l72-72 2 1 86 48c25 14 25 36 0 50l-86 48-2 1z"/>
+              <path fill="#FF3A44" d="M351 295l-73-73L61 442c8 9 22 10 38 1l252-148"/>
+              <path fill="#00DE7A" d="M351 148L99 5C83-4 69-3 61 5l217 217 73-74z"/>
+            </svg>
+            <span class="store-label">
+              <span class="store-pre">Get it on</span>
+              <span class="store-name">Google Play</span>
+            </span>
+          </a>
+        </div>
       </div>
 
       <nav class="footer-nav" aria-label="Footer">

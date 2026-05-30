@@ -669,13 +669,15 @@ body.theme-night .cursor-halo { opacity: 0.95; }
 }
 
 /* Lotus wrapper — large, prominent composed mark (lotus + "mAmi"
-   wordmark + flourish) centered in the bloom stage. The mark is the
-   focal hero element; the eyebrow sits above it and the tagline below. */
+   wordmark + flourish) anchored to the upper portion of the bloom
+   stage. The mark is the focal hero element; .hero-content (eyebrow
+   + tagline + CTAs) is pushed to the lower half via align-self:end,
+   so the two never overlap. */
 .lotus-wrap {
   position: absolute;
-  top: 50%; left: 50%;
-  width: min(70vmin, 720px);
-  height: min(70vmin, 720px);
+  top: 38%; left: 50%;
+  width: min(60vmin, 620px);
+  height: min(60vmin, 620px);
   transform: translate(-50%, -50%);
   z-index: 1;
   display: grid;
@@ -759,7 +761,13 @@ body.theme-night .cursor-halo { opacity: 0.95; }
   text-align: center;
   max-width: 760px;
   margin: 0 auto;
-  padding-top: clamp(280px, 42vh, 460px);
+  /* Anchored to the bottom of the bloom-stage grid so the lotus
+     (which is absolutely positioned in the upper portion) and the
+     copy (eyebrow + tagline + CTAs) never compete for the same
+     vertical space. The padding-bottom keeps it off the very edge. */
+  align-self: end;
+  padding-top: 0;
+  padding-bottom: clamp(60px, 10vh, 120px);
 }
 .hero-headline {
   font-size: clamp(54px, 9vw, 132px);

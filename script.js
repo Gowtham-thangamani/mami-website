@@ -375,12 +375,17 @@
       },
     });
 
+    // Reverse parallax — the "loud" copy lifts away and fades early
+    // (shorter duration = finishes by ~60% of the scrub range), while
+    // the lotus drifts gently and fades last. The two layers move at
+    // different velocities so the symbol lingers after the words leave,
+    // echoing the "a soft place for the loud hour" voice.
     tl
-      .to(".scroll-cue",       { opacity: 0, y: 14, duration: 0.25 }, 0)
-      .to(".hero-content",     { y: -120, opacity: 0, scale: 0.94, duration: 1.0 }, 0)
-      .to(".lotus-wrap",       { y: -60, scale: 1.08, opacity: 0.4, duration: 1.0 }, 0)
-      .to(".side-caption",     { opacity: 0, duration: 0.45 }, 0)
-      .to(".lotus-bloom-glow", { opacity: 0.2, duration: 1.0 }, 0)
+      .to(".scroll-cue",       { opacity: 0, y: 14, duration: 0.2 }, 0)
+      .to(".hero-content",     { y: -180, opacity: 0, scale: 0.96, duration: 0.6 }, 0)
+      .to(".lotus-wrap",       { y: -32, scale: 1.03, opacity: 0, duration: 1.0 }, 0)
+      .to(".side-caption",     { opacity: 0, duration: 0.55 }, 0)
+      .to(".lotus-bloom-glow", { opacity: 0.15, duration: 1.0 }, 0)
       .to(".atmosphere",       { opacity: 0.5, duration: 1.0 }, 0);
 
     return tl;

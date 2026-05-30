@@ -862,12 +862,16 @@ body.theme-night .cursor-halo { opacity: 0.95; }
 }
 .weight-track {
   display: flex;
-  gap: clamp(40px, 6vw, 96px);
+  gap: clamp(24px, 3vw, 56px);
   padding: clamp(60px, 10vh, 120px) var(--gutter);
   will-change: transform;
 }
 .vignette {
-  flex: 0 0 min(80vw, 760px);
+  /* Sized so three vignettes fit fully on a standard desktop viewport
+     (no partial-card clipping on the sides). The 4th "mAmI was made"
+     mark sits just past the right edge and reveals via the horizontal
+     scrub. On mobile the cards stay at 80vw so they read large. */
+  flex: 0 0 min(80vw, 520px);
   position: relative;
 }
 .vignette-frame {

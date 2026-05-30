@@ -668,21 +668,25 @@ body.theme-night .cursor-halo { opacity: 0.95; }
   opacity: 0.55;
 }
 
-/* Lotus wrapper — square container holding the full composed PNG
-   (lotus + "mAmi" wordmark + decorative flourish). Positioned in the
-   upper portion of the bloom stage so the whole mark — including the
-   wordmark and flourish below the lotus — sits cleanly ABOVE the
-   eyebrow + headline, never overlapping the copy. */
+/* Lotus wrapper — large, prominent composed mark (lotus + "mAmi"
+   wordmark + flourish) centered in the bloom stage. The mark is the
+   focal hero element; the eyebrow sits above it and the tagline below. */
 .lotus-wrap {
   position: absolute;
-  top: 20%; left: 50%;
-  width: min(40vmin, 380px);
-  height: min(40vmin, 380px);
+  top: 50%; left: 50%;
+  width: min(70vmin, 720px);
+  height: min(70vmin, 720px);
   transform: translate(-50%, -50%);
   z-index: 1;
   display: grid;
   place-items: center;
+  pointer-events: none;
 }
+
+/* Headline hidden — the composition centers on the lotus mark + tagline
+   instead of a separate display headline. Removed from layout to avoid
+   reserving its 132px-tall space. */
+.hero-headline { display: none; }
 .lotus-bed {
   position: absolute; left: 50%; bottom: 8%;
   width: 60%; height: 14%;

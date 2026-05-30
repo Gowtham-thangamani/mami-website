@@ -2423,32 +2423,52 @@ body.lang-ar .not-grid li { font-family: var(--serif-ar); font-variation-setting
    ================================================================= */
 /* Carry portrait — wordless image of a child holding the memory of
    mother+child at sunset. Sits between the page-hero and the brand
-   statement on About. Static, no scrub/parallax (respects the calm
-   subpage rules). */
+   statement on About.
+
+   ────────────────────────────────────────────────────────────────
+   TUNING LEVERS (the "place to fix this image"):
+
+     --carry-w       : how wide the visible portrait is.
+                       Larger = more dominant; smaller = quieter.
+     --carry-aspect  : portrait aspect ratio (width / height).
+                       Lower number = taller frame.
+     --carry-shift-x : horizontal slide of the silhouette inside
+                       the frame (in %). Negative shifts left,
+                       positive shifts right. Use this to recenter
+                       the silhouette if the source PNG has uneven
+                       white padding.
+
+   ────────────────────────────────────────────────────────────────
+   Background:cream is required so the inner img's
+   mix-blend-mode:multiply has a cream surface to compose against
+   (the .fade-up wrapper isolates the stacking context, so the page
+   bg isn't directly visible to the multiply). */
 .carry-portrait {
+  --carry-w: clamp(280px, 40vw, 460px);
+  --carry-aspect: 0.62;
+  --carry-shift-x: -8%;
+
   display: block;
   margin: clamp(48px, 8vh, 96px) auto;
   padding: 0;
-  max-width: 520px;
-  text-align: center;
-  /* The figure is wrapped by .fade-up which creates an isolated
-     stacking context (via opacity transition + will-change). For
-     mix-blend-mode on the inner img to actually multiply against
-     the cream page color, we have to give the figure its own cream
-     background — the blend then composes against THAT, producing
-     the same visual result as if the page bg were directly behind. */
+  width: var(--carry-w);
+  aspect-ratio: var(--carry-aspect);
+  max-height: 78vh;
+  overflow: hidden;
   background: var(--cream);
 }
 .carry-portrait-img {
   display: block;
   width: 100%;
-  height: auto;
-  max-height: 78vh;
-  object-fit: contain;
-  margin: 0 auto;
-  /* multiply makes the source PNG's white background read as cream
-     (white * cream = cream) while preserving the dark double-exposure
-     silhouette tones (dark * cream = darker cream tint). */
+  height: 100%;
+  object-fit: cover;
+  /* object-position uses --carry-shift-x to nudge the silhouette
+     horizontally so it sits centered inside the frame, cropping
+     the white margin of the source PNG. */
+  object-position: calc(50% + var(--carry-shift-x)) center;
+  /* multiply makes the source PNG's white pixels read as cream
+     (white * cream = cream) while the dark double-exposure tones
+     of the portrait stay intact. */
   mix-blend-mode: multiply;
 }
 

@@ -668,17 +668,21 @@ body.theme-night .cursor-halo { opacity: 0.95; }
   opacity: 0.55;
 }
 
-/* Lotus wrapper — sized so it sits as a quiet hero mark above the
-   copy, never overlapping the headline below. */
+/* Lotus wrapper — sized to the lotus shape's aspect ratio (not the
+   full PNG canvas, which carries wordmark + flourish below). The
+   shorter height + overflow:hidden clip the bottom of the PNG so
+   the lotus reads as the only content and no empty space is left
+   below it. */
 .lotus-wrap {
   position: absolute;
   top: 30%; left: 50%;
   width: min(46vmin, 440px);
-  height: min(46vmin, 440px);
+  height: min(27vmin, 260px);
   transform: translate(-50%, -50%);
   z-index: 1;
   display: grid;
   place-items: center;
+  overflow: hidden;
 }
 .lotus-bed {
   position: absolute; left: 50%; bottom: 8%;
@@ -704,15 +708,17 @@ body.theme-night .cursor-halo { opacity: 0.95; }
   filter: drop-shadow(0 30px 80px rgba(91, 44, 58, 0.22));
 }
 
-/* Photographic lotus (used when assets/lotus.png exists) ---------- */
+/* Photographic lotus (used when assets/lotus.png exists). Anchored
+   to the top of the wrap (which is sized to lotus aspect), with full
+   width — the bottom of the PNG (wordmark + flourish) is clipped by
+   the wrap's overflow:hidden, so no mask is needed and no empty
+   space appears below the lotus. */
 .lotus-photo {
   position: absolute;
-  top: 50%; left: 50%;
-  width: auto;
+  top: 0; left: 50%;
+  width: 100%;
   height: auto;
-  max-width: 96%;
-  max-height: 92%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   z-index: 1;
   opacity: 0;
   pointer-events: none;
@@ -729,21 +735,9 @@ body.theme-night .cursor-halo { opacity: 0.95; }
   background: radial-gradient(circle, rgba(255, 235, 200, 0.7), rgba(252, 220, 200, 0.18) 35%, rgba(252, 220, 200, 0) 60%);
   filter: blur(28px);
 }
-/* The supplied logo PNG contains the lotus + an "mAmi" wordmark + a
-   decorative branch beneath. The hero has its own typography below
-   the lotus (decorative .hero-mark + .hero-sub), so we mask the photo
-   tightly to show ONLY the crystalline lotus and let the typographic
-   space below it stay clean. */
+/* No mask needed — the wrap is sized to the lotus shape's aspect and
+   clips the bottom of the PNG (wordmark + flourish) via overflow:hidden. */
 .lotus-wrap.has-photo .lotus-photo {
-  /* Tight cut just past the lotus shape: solid through 58% (full lotus
-     including bottom petal), sharp fade to transparent by 61%. The
-     baked-in "mAmi" wordmark + decorative heart/flourish sit at ~62%+
-     and are fully hidden. The fade window is intentionally narrow to
-     avoid letting any wordmark pixels bleed through. */
-  -webkit-mask-image: linear-gradient(to bottom,
-    black 0%, black 58%, transparent 61%);
-  mask-image: linear-gradient(to bottom,
-    black 0%, black 58%, transparent 61%);
   filter: none; /* the photo carries its own glow */
 }
 .lotus-group { transform-origin: 300px 300px; }

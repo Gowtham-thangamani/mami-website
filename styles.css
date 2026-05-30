@@ -2424,15 +2424,20 @@ body.lang-ar .not-grid li { font-family: var(--serif-ar); font-variation-setting
 /* Carry portrait — wordless image of a child holding the memory of
    mother+child at sunset. Sits between the page-hero and the brand
    statement on About. Static, no scrub/parallax (respects the calm
-   subpage rules). mix-blend-mode:multiply makes the PNG's white
-   background read as the cream page, so no transparent re-export
-   is needed. */
+   subpage rules). */
 .carry-portrait {
   display: block;
   margin: clamp(48px, 8vh, 96px) auto;
   padding: 0;
   max-width: 520px;
   text-align: center;
+  /* The figure is wrapped by .fade-up which creates an isolated
+     stacking context (via opacity transition + will-change). For
+     mix-blend-mode on the inner img to actually multiply against
+     the cream page color, we have to give the figure its own cream
+     background — the blend then composes against THAT, producing
+     the same visual result as if the page bg were directly behind. */
+  background: var(--cream);
 }
 .carry-portrait-img {
   display: block;
@@ -2441,9 +2446,9 @@ body.lang-ar .not-grid li { font-family: var(--serif-ar); font-variation-setting
   max-height: 78vh;
   object-fit: contain;
   margin: 0 auto;
-  /* The source PNG ships with a white background; multiply lets the
-     cream page color show through the white pixels while preserving
-     the dark double-exposure tones of the child portrait. */
+  /* multiply makes the source PNG's white background read as cream
+     (white * cream = cream) while preserving the dark double-exposure
+     silhouette tones (dark * cream = darker cream tint). */
   mix-blend-mode: multiply;
 }
 

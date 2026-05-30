@@ -265,11 +265,10 @@
 
   // Hero entrance: hide these at script parse so there's no flash before
   // the entrance animation plays on DOMContentLoaded.
-  // (lotus-photo uses xPercent to preserve the CSS horizontal-centering
-  //  translateX(-50%) when GSAP later animates its scale. yPercent is 0
-  //  because the photo is now top-anchored, not vertically centered.)
+  // (lotus-photo uses xPercent/yPercent to preserve the CSS absolute-centering
+  //  translate(-50%, -50%) when GSAP later animates its scale.)
   gsap.set(".lotus", { scale: 0.94, opacity: 0 });
-  gsap.set(".lotus-photo", { xPercent: -50, scale: 0.94, opacity: 0 });
+  gsap.set(".lotus-photo", { xPercent: -50, yPercent: -50, scale: 0.94, opacity: 0 });
   gsap.set(".lotus-bloom-glow", { opacity: 0, scale: 0.7 });
   gsap.set(".side-caption", { opacity: 0 });
   gsap.set(".eyebrow", { y: 14, opacity: 0 });

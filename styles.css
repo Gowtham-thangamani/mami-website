@@ -668,21 +668,19 @@ body.theme-night .cursor-halo { opacity: 0.95; }
   opacity: 0.55;
 }
 
-/* Lotus wrapper — sized to the lotus shape's aspect ratio (not the
-   full PNG canvas, which carries wordmark + flourish below). The
-   shorter height + overflow:hidden clip the bottom of the PNG so
-   the lotus reads as the only content and no empty space is left
-   below it. */
+/* Lotus wrapper — square container holding the full composed PNG
+   (lotus + "mAmi" wordmark + decorative flourish). Positioned in the
+   upper third of the bloom stage so the mark sits as a quiet hero
+   element above the copy. */
 .lotus-wrap {
   position: absolute;
   top: 30%; left: 50%;
   width: min(46vmin, 440px);
-  height: min(27vmin, 260px);
+  height: min(46vmin, 440px);
   transform: translate(-50%, -50%);
   z-index: 1;
   display: grid;
   place-items: center;
-  overflow: hidden;
 }
 .lotus-bed {
   position: absolute; left: 50%; bottom: 8%;
@@ -708,17 +706,18 @@ body.theme-night .cursor-halo { opacity: 0.95; }
   filter: drop-shadow(0 30px 80px rgba(91, 44, 58, 0.22));
 }
 
-/* Photographic lotus (used when assets/lotus.png exists). Anchored
-   to the top of the wrap (which is sized to lotus aspect), with full
-   width — the bottom of the PNG (wordmark + flourish) is clipped by
-   the wrap's overflow:hidden, so no mask is needed and no empty
-   space appears below the lotus. */
+/* Photographic lotus (used when assets/lotus.png exists). The full
+   composed PNG (lotus + "mAmi" wordmark + decorative flourish) is
+   centered inside the wrap with object-fit:contain — no mask, no
+   crop, the full mark reads as the brand. */
 .lotus-photo {
   position: absolute;
-  top: 0; left: 50%;
-  width: 100%;
+  top: 50%; left: 50%;
+  width: auto;
   height: auto;
-  transform: translateX(-50%);
+  max-width: 96%;
+  max-height: 92%;
+  transform: translate(-50%, -50%);
   z-index: 1;
   opacity: 0;
   pointer-events: none;

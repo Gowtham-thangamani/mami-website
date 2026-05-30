@@ -1059,11 +1059,13 @@ body.theme-night .cursor-halo { opacity: 0.95; }
 
 /* Line-art lotus — now a grid item in the right column of
    .descent-stage. Sized to fit comfortably beside the copy.
-   grid-column: 2 forces it into the RIGHT column even though it
-   appears first in the DOM (above .descent-copy in the HTML). */
+   grid-column: 2 + grid-row: 1 forces it into the upper-RIGHT
+   cell regardless of DOM order (sibling .night / .descent-fadeback
+   would otherwise nudge it into a new row). */
 .line-lotus {
   position: relative;
   grid-column: 2;
+  grid-row: 1;
   width: min(48vmin, 520px);
   height: min(48vmin, 520px);
   z-index: 1;
@@ -1094,9 +1096,11 @@ body.theme-night .cursor-halo { opacity: 0.95; }
   z-index: 2;
   /* Left column of the split: text anchored to the right edge of
      its column so it reads close to the line-lotus on the right.
-     grid-column: 1 forces this into the LEFT column regardless of
-     DOM order (the SVG line-lotus comes first in markup). */
+     grid-column: 1 + grid-row: 1 forces this into the upper-LEFT
+     cell regardless of DOM order or absolute siblings (.night and
+     .descent-fadeback would otherwise push us into a new row). */
   grid-column: 1;
+  grid-row: 1;
   text-align: left;
   max-width: 540px;
   margin: 0;

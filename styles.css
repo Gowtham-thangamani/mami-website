@@ -2421,41 +2421,92 @@ body.lang-ar .not-grid li { font-family: var(--serif-ar); font-variation-setting
 /* =================================================================
    BRAND STATEMENT callout (About page) — quiet positioning block
    ================================================================= */
-/* Carry portrait — wordless image of a child holding the memory of
-   mother+child at sunset. Sits between the page-hero and the brand
-   statement on About.
+/* Carry split — two-column section on About: text on the left,
+   carry-portrait image on the right. Stacks vertically on mobile.
+   The portrait keeps its tuned frame (variables below). */
+.carry-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 96px);
+  align-items: center;
+  margin: clamp(60px, 10vh, 120px) auto;
+  max-width: 1100px;
+}
+.carry-copy {
+  text-align: left;
+  max-width: 480px;
+  justify-self: end;
+}
+.carry-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  margin: 0 0 22px;
+  font-weight: 500;
+}
+.carry-h {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin: 0 0 24px;
+  color: var(--ink);
+  font-weight: 380;
+}
+.carry-body {
+  font-family: var(--sans);
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--ink) 78%, transparent);
+  margin: 0;
+}
+
+/* Carry portrait — figure now lives inside .carry-split, anchored
+   to the start of the right column so the silhouette reads against
+   the copy on the left.
 
    ────────────────────────────────────────────────────────────────
    TUNING LEVERS (the "place to fix this image"):
 
      --carry-w       : how wide the visible portrait is.
-                       Larger = more dominant; smaller = quieter.
      --carry-aspect  : portrait aspect ratio (width / height).
                        Lower number = taller frame.
      --carry-shift-x : horizontal slide of the silhouette inside
-                       the frame (in %). Negative shifts left,
-                       positive shifts right. Use this to recenter
-                       the silhouette if the source PNG has uneven
-                       white padding.
+                       the frame (in %). Use to recenter if the
+                       source PNG has uneven padding.
 
    ────────────────────────────────────────────────────────────────
    Background:cream is required so the inner img's
    mix-blend-mode:multiply has a cream surface to compose against
-   (the .fade-up wrapper isolates the stacking context, so the page
-   bg isn't directly visible to the multiply). */
+   (the .fade-up wrapper isolates the stacking context). */
 .carry-portrait {
   --carry-w: clamp(280px, 40vw, 460px);
   --carry-aspect: 0.62;
   --carry-shift-x: -8%;
 
   display: block;
-  margin: clamp(48px, 8vh, 96px) auto;
+  margin: 0;
   padding: 0;
   width: var(--carry-w);
   aspect-ratio: var(--carry-aspect);
   max-height: 78vh;
   overflow: hidden;
   background: var(--cream);
+  justify-self: start;
+}
+
+@media (max-width: 820px) {
+  .carry-split {
+    grid-template-columns: 1fr;
+    gap: clamp(32px, 6vh, 56px);
+    text-align: center;
+  }
+  .carry-copy { justify-self: center; text-align: center; }
+  .carry-portrait { justify-self: center; }
 }
 .carry-portrait-img {
   display: block;

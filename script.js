@@ -272,7 +272,12 @@
   gsap.set(".lotus-bloom-glow", { opacity: 0, scale: 0.7 });
   gsap.set(".side-caption", { opacity: 0 });
   gsap.set(".eyebrow", { y: 14, opacity: 0 });
-  gsap.set(".hero-headline .word-inner", { yPercent: 110 });
+  // Hide the headline words below their line until the bloom entrance
+  // lifts them. We explicitly set BOTH y:0 and yPercent:110 because GSAP
+  // tracks them as separate properties; if only yPercent is animated back
+  // to 0 later, a stale y pixel offset can remain and the words stay
+  // visually clipped inside .word's overflow:hidden.
+  gsap.set(".hero-headline .word-inner", { y: 0, yPercent: 110 });
   gsap.set(".hero-mark", { y: 10, opacity: 0 });
   gsap.set(".hero-sub .sub-line", { y: 14, opacity: 0 });
   gsap.set(".hero-cta .btn-primary, .hero-cta .btn-ghost", { y: 20, opacity: 0 });
@@ -315,10 +320,16 @@
       .to(".side-caption",     { opacity: 1, duration: 0.9, ease: "power2.out" }, 0.35)
       // Hero copy in a confident cascade
       .to(".eyebrow",          { y: 0, opacity: 1, duration: 0.7 }, 0.55)
-      .to(".hero-headline .line:nth-child(1) .word-inner",
-                                { yPercent: 0, duration: 0.9, stagger: 0.06, ease: "expo.out" }, 0.7)
-      .to(".hero-headline .line:nth-child(2) .word-inner",
-                                { yPercent: 0, duration: 0.9, stagger: 0.06, ease: "expo.out" }, 0.85)
+      // fromTo (with explicit y:0 in both states) so the entrance
+      // guarantees a clean translate(0,0) at the end — without this,
+      // a stale pixel-y left by gsap.set(yPercent:110) can survive
+      // alongside the animated yPercent:0, leaving the words clipped.
+      .fromTo(".hero-headline .line:nth-child(1) .word-inner",
+        { y: 0, yPercent: 110 },
+        { y: 0, yPercent: 0, duration: 0.9, stagger: 0.06, ease: "expo.out" }, 0.7)
+      .fromTo(".hero-headline .line:nth-child(2) .word-inner",
+        { y: 0, yPercent: 110 },
+        { y: 0, yPercent: 0, duration: 0.9, stagger: 0.06, ease: "expo.out" }, 0.85)
       .to(".hero-mark",         { y: 0, opacity: 1, duration: 0.8 }, 1.15)
       .to(".hero-sub .sub-line",
                                 { y: 0, opacity: 1, duration: 0.7, stagger: 0.08 }, 1.45)
@@ -1265,7 +1276,9 @@
       if (!EN_HEADLINES_CACHE[sel]) EN_HEADLINES_CACHE[sel] = el.innerHTML;
       el.innerHTML = isAR ? arHtml : EN_HEADLINES_CACHE[sel];
       if (!prefersReducedMotion) {
-        gsap.set(el.querySelectorAll(".word-inner"), { yPercent: 110 });
+        // Set both y and yPercent so the pinned-timeline rebuild
+        // can lift them back cleanly without leaving a stale pixel y.
+        gsap.set(el.querySelectorAll(".word-inner"), { y: 0, yPercent: 110 });
       }
     });
 

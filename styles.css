@@ -670,13 +670,14 @@ body.theme-night .cursor-halo { opacity: 0.95; }
 
 /* Lotus wrapper — square container holding the full composed PNG
    (lotus + "mAmi" wordmark + decorative flourish). Positioned in the
-   upper third of the bloom stage so the mark sits as a quiet hero
-   element above the copy. */
+   upper portion of the bloom stage so the whole mark — including the
+   wordmark and flourish below the lotus — sits cleanly ABOVE the
+   eyebrow + headline, never overlapping the copy. */
 .lotus-wrap {
   position: absolute;
-  top: 30%; left: 50%;
-  width: min(46vmin, 440px);
-  height: min(46vmin, 440px);
+  top: 20%; left: 50%;
+  width: min(40vmin, 380px);
+  height: min(40vmin, 380px);
   transform: translate(-50%, -50%);
   z-index: 1;
   display: grid;

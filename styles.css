@@ -996,10 +996,16 @@ body.theme-night .cursor-halo { opacity: 0.95; }
 .descent-stage {
   position: relative;
   min-height: 130vh;
+  /* Split layout: copy on the left, line-lotus on the right.
+     The night background sits absolutely behind both columns. */
   display: grid;
-  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(40px, 6vw, 96px);
   padding: 0 var(--gutter);
   overflow: hidden;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 /* Night-sky background */
@@ -1051,15 +1057,18 @@ body.theme-night .cursor-halo { opacity: 0.95; }
 .star.s11 { left: 74%; top: 86%; width: 1.5px; height: 1.5px; }
 .star.s12 { left: 88%; top: 72%; }
 
-/* Line-art lotus */
+/* Line-art lotus — now a grid item in the right column of
+   .descent-stage. Sized to fit comfortably beside the copy.
+   grid-column: 2 forces it into the RIGHT column even though it
+   appears first in the DOM (above .descent-copy in the HTML). */
 .line-lotus {
-  position: absolute;
-  top: 50%; left: 50%;
-  width: min(74vmin, 700px);
-  height: min(74vmin, 700px);
-  transform: translate(-50%, -50%);
+  position: relative;
+  grid-column: 2;
+  width: min(48vmin, 520px);
+  height: min(48vmin, 520px);
   z-index: 1;
   filter: drop-shadow(0 0 30px rgba(232, 196, 146, 0.4));
+  justify-self: center;
 }
 .line-lotus-svg { width: 100%; height: 100%; }
 .ll-ring path {
@@ -1083,10 +1092,16 @@ body.theme-night .cursor-halo { opacity: 0.95; }
 .descent-copy {
   position: relative;
   z-index: 2;
-  text-align: center;
-  max-width: 820px;
-  margin: 0 auto;
-  padding-top: 8vh;
+  /* Left column of the split: text anchored to the right edge of
+     its column so it reads close to the line-lotus on the right.
+     grid-column: 1 forces this into the LEFT column regardless of
+     DOM order (the SVG line-lotus comes first in markup). */
+  grid-column: 1;
+  text-align: left;
+  max-width: 540px;
+  margin: 0;
+  padding-top: 0;
+  justify-self: end;
 }
 .descent-eyebrow {
   font-size: 11px;
@@ -2509,6 +2524,24 @@ body.lang-ar .not-grid li { font-family: var(--serif-ar); font-variation-setting
   }
   .carry-copy { justify-self: center; text-align: center; }
   .carry-portrait { justify-self: center; }
+
+  /* Act III split also collapses on mobile — copy on top, line-lotus
+     below, both centered. */
+  .descent-stage {
+    grid-template-columns: 1fr;
+    gap: clamp(32px, 6vh, 56px);
+    padding-top: clamp(60px, 10vh, 100px);
+  }
+  .descent-copy {
+    justify-self: center;
+    text-align: center;
+    max-width: 540px;
+  }
+  .line-lotus {
+    width: min(70vmin, 420px);
+    height: min(70vmin, 420px);
+    justify-self: center;
+  }
 }
 .carry-portrait-img {
   display: block;

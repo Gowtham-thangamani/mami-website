@@ -772,26 +772,6 @@ body.theme-night .cursor-halo { opacity: 0.95; }
 }
 .hero-headline .line { display: block; }
 
-/* Decorative wordmark — a quiet, oversized italic "mAmi" that sits as
-   a soft title above the tagline. Was previously bleeding through from
-   the lotus PNG; now lifted out as its own typographic element so the
-   sub-line copy below stays on a clean background. */
-.hero-mark {
-  margin: 4px 0 18px;
-  font-family: var(--serif);
-  font-style: italic;
-  font-variation-settings: "opsz" 144, "wght" 320, "SOFT" 90, "WONK" 1;
-  font-size: clamp(40px, 6vw, 88px);
-  line-height: 1;
-  letter-spacing: -0.02em;
-  color: color-mix(in srgb, var(--plum, #6E3E50) 55%, transparent);
-  text-align: center;
-  -webkit-user-select: none;
-  user-select: none;
-  pointer-events: none;
-}
-.hero-mark span { display: inline-block; }
-
 .hero-sub {
   font-size: clamp(15px, 1.4vw, 18px);
   line-height: 1.7;

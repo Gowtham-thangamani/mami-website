@@ -278,7 +278,6 @@
   // to 0 later, a stale y pixel offset can remain and the words stay
   // visually clipped inside .word's overflow:hidden.
   gsap.set(".hero-headline .word-inner", { y: 0, yPercent: 110 });
-  gsap.set(".hero-mark", { y: 10, opacity: 0 });
   gsap.set(".hero-sub .sub-line", { y: 14, opacity: 0 });
   gsap.set(".hero-cta .btn-primary, .hero-cta .btn-ghost", { y: 20, opacity: 0 });
   gsap.set(".scroll-cue", { opacity: 0 });
@@ -330,9 +329,8 @@
       .fromTo(".hero-headline .line:nth-child(2) .word-inner",
         { y: 0, yPercent: 110 },
         { y: 0, yPercent: 0, duration: 0.9, stagger: 0.06, ease: "expo.out" }, 0.85)
-      .to(".hero-mark",         { y: 0, opacity: 1, duration: 0.8 }, 1.15)
       .to(".hero-sub .sub-line",
-                                { y: 0, opacity: 1, duration: 0.7, stagger: 0.08 }, 1.45)
+                                { y: 0, opacity: 1, duration: 0.7, stagger: 0.08 }, 1.35)
       .to(".hero-cta .btn-primary, .hero-cta .btn-ghost",
                                 { y: 0, opacity: 1, duration: 0.7, stagger: 0.08 }, 1.7)
       .to(".scroll-cue",       { opacity: 1, duration: 0.6 }, 2.1);
@@ -394,7 +392,7 @@
 
     if (prefersReducedMotion) {
       setLotusState(1);
-      gsap.set(".side-caption, .hero-mark, .hero-sub .sub-line, .hero-cta .btn-primary, .hero-cta .btn-ghost, .eyebrow, .scroll-cue",
+      gsap.set(".side-caption, .hero-sub .sub-line, .hero-cta .btn-primary, .hero-cta .btn-ghost, .eyebrow, .scroll-cue",
                { opacity: 1, y: 0 });
       gsap.set(".hero-headline .word-inner", { yPercent: 0 });
       gsap.set(".lotus, .lotus-photo", { scale: 1, opacity: 1 });

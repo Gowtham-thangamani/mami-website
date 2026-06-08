@@ -1,0 +1,7 @@
+# Playwright MCP debug dumps (console logs + page snapshots)
+.playwright-mcp/
+
+# Local dev screenshots & scratch images at the repo root
+# (real site images live in assets/ and are NOT ignored)
+/*.png
+/.tmp-*

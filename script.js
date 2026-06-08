@@ -1590,6 +1590,19 @@
       });
     });
 
+    // 4b) Pillars — reveal the four cards one at a time as the grid
+    //     scrolls in (gentle stagger, document order so RTL + mobile
+    //     single-column still flow i → iv).
+    $$(".pillars-grid").forEach((grid) => {
+      const cards = grid.querySelectorAll(":scope > .pillar");
+      if (!cards.length) return;
+      gsap.from(cards, {
+        y: 28, opacity: 0,
+        duration: 0.8, stagger: 0.15, ease: "power3.out",
+        scrollTrigger: { trigger: grid, start: "top 80%" },
+      });
+    });
+
     // 5) CTA blocks — gentle scale-pop entrance
     $$(".page-cta").forEach((cta) => {
       claim(cta);

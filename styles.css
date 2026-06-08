@@ -464,7 +464,7 @@ body.theme-night .cursor-halo { opacity: 0.95; }
 }
 .display-h em, .hero-headline em, .descent-h em, .coda-h em {
   font-style: italic;
-  font-variation-settings: "opsz" 144, "wght" 380, "SOFT" 100, "WONK" 1;
+  font-variation-settings: "opsz" 144, "wght" 380, "SOFT" 100, "WONK" 0;
   color: var(--accent);
   transition: color 800ms var(--ease);
 }
@@ -925,7 +925,7 @@ body.theme-night .cursor-halo { opacity: 0.95; }
   color: rgba(255, 244, 228, 0.8);
   display: block;
   margin-bottom: 18px;
-  font-variation-settings: "opsz" 144, "SOFT" 90, "WONK" 1;
+  font-variation-settings: "opsz" 144, "SOFT" 90, "WONK" 0;
 }
 .v-title {
   font-family: var(--serif);
@@ -966,7 +966,7 @@ body.theme-night .cursor-halo { opacity: 0.95; }
   color: var(--ivory);
   margin: 0;
   letter-spacing: -0.02em;
-  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 0;
   line-height: 1.0;
 }
 .mark-line em { color: var(--gold); font-style: italic; }
@@ -1125,12 +1125,12 @@ body.theme-night .cursor-halo { opacity: 0.95; }
   line-height: 1;
   color: var(--ivory);
   margin: 0 0 28px;
-  font-variation-settings: "opsz" 144, "wght" 360, "SOFT" 90, "WONK" 1;
+  font-variation-settings: "opsz" 144, "wght" 360, "SOFT" 90, "WONK" 0;
 }
 .descent-h em {
   color: var(--gold);
   font-style: italic;
-  font-variation-settings: "opsz" 144, "wght" 380, "SOFT" 100, "WONK" 1;
+  font-variation-settings: "opsz" 144, "wght" 380, "SOFT" 100, "WONK" 0;
 }
 .descent-sub {
   font-size: clamp(15px, 1.25vw, 18px);
@@ -1289,7 +1289,7 @@ body.theme-night .cursor-halo { opacity: 0.95; }
 .step-h em {
   font-style: italic;
   color: var(--accent);
-  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 0;
 }
 .step-body {
   font-size: 16px;
@@ -1361,7 +1361,7 @@ body.theme-night .cursor-halo { opacity: 0.95; }
 .m-q em {
   color: var(--rose-2);
   font-style: italic;
-  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 0;
 }
 .m-sep {
   color: var(--gold-2);
@@ -1409,7 +1409,7 @@ body.theme-night .cursor-halo { opacity: 0.95; }
 .open-h em {
   color: var(--accent);
   font-style: italic;
-  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 0;
 }
 .open-body {
   font-size: 16px;
@@ -1449,7 +1449,7 @@ body.theme-night .cursor-halo { opacity: 0.95; }
   font-style: italic;
   font-size: clamp(20px, 2.2vw, 32px);
   color: var(--accent);
-  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 0;
 }
 
 
@@ -1488,7 +1488,7 @@ body.theme-night .cursor-halo { opacity: 0.95; }
 .coda-h {
   font-size: clamp(46px, 6vw, 92px);
   margin: 0 0 32px;
-  font-variation-settings: "opsz" 144, "wght" 360, "SOFT" 90, "WONK" 1;
+  font-variation-settings: "opsz" 144, "wght" 360, "SOFT" 90, "WONK" 0;
 }
 .coda-sub {
   font-size: clamp(15px, 1.3vw, 18px);
@@ -1594,7 +1594,7 @@ body.theme-night .cursor-halo { opacity: 0.95; }
   font-size: clamp(28px, 3.4vw, 48px);
   color: var(--accent);
   font-style: italic;
-  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 0;
   display: inline-flex; align-items: center; gap: 16px;
   letter-spacing: -0.01em;
   transition: color 250ms var(--ease), transform 350ms var(--ease);
@@ -1641,7 +1641,7 @@ body.theme-night .cursor-halo { opacity: 0.95; }
   font-style: italic;
   font-size: 18px;
   color: color-mix(in srgb, var(--accent) 80%, var(--ink));
-  font-variation-settings: "opsz" 144, "SOFT" 90, "WONK" 1;
+  font-variation-settings: "opsz" 144, "SOFT" 90, "WONK" 0;
   max-width: 30ch;
 }
 .footer-nav {
@@ -2055,7 +2055,7 @@ body.lang-ar .page-eyebrow { font-family: var(--sans-ar); }
 .page-title em {
   color: var(--accent);
   font-style: italic;
-  font-variation-settings: "opsz" 144, "wght" 380, "SOFT" 100, "WONK" 1;
+  font-variation-settings: "opsz" 144, "wght" 380, "SOFT" 100, "WONK" 0;
 }
 body.lang-ar .page-title {
   font-family: var(--serif-ar);
@@ -2142,7 +2142,7 @@ body.lang-ar .page-section-body { font-family: var(--sans-ar); line-height: 1.9;
   font-style: italic;
   font-size: clamp(18px, 2vw, 24px);
   color: color-mix(in srgb, var(--accent) 80%, var(--ink));
-  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 0;
   margin: 0 0 28px;
 }
 body.lang-ar .page-cta-reassure {
@@ -2208,6 +2208,39 @@ body.lang-ar .feature-row-h {
   max-width: 44ch;
 }
 body.lang-ar .feature-row-body { font-family: var(--sans-ar); line-height: 1.9; }
+
+.feature-row-list {
+  list-style: none;
+  margin: 26px 0 0;
+  padding: 0;
+  max-width: 44ch;
+}
+.feature-row-list li {
+  position: relative;
+  padding-left: 22px;
+  font-size: clamp(14px, 1.05vw, 15.5px);
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--ink) 66%, transparent);
+  margin: 0 0 11px;
+}
+.feature-row-list li:last-child { margin-bottom: 0; }
+.feature-row-list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.62em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.55;
+}
+body.lang-ar .feature-row-list li {
+  font-family: var(--sans-ar);
+  padding-left: 0;
+  padding-right: 22px;
+}
+body.lang-ar .feature-row-list li::before { left: auto; right: 2px; }
 
 .feature-row-visual {
   aspect-ratio: 1;
@@ -2307,7 +2340,7 @@ body.lang-ar .contact-form textarea {
   font-size: clamp(28px, 3.6vw, 48px);
   color: var(--accent);
   font-style: italic;
-  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 0;
   letter-spacing: -0.01em;
   transition: color 250ms var(--ease), transform 350ms var(--ease);
 }
@@ -2575,7 +2608,7 @@ body.lang-ar .not-grid li { font-family: var(--serif-ar); font-variation-setting
   font-size: clamp(26px, 3.4vw, 44px);
   line-height: 1.18;
   color: var(--accent);
-  font-variation-settings: "opsz" 144, "wght" 380, "SOFT" 100, "WONK" 1;
+  font-variation-settings: "opsz" 144, "wght" 380, "SOFT" 100, "WONK" 0;
   margin: 0 0 22px;
   letter-spacing: -0.01em;
 }
@@ -2639,7 +2672,7 @@ body.lang-ar .page-section-lede { font-family: var(--serif-ar); font-variation-s
   font-size: 22px;
   color: var(--accent);
   letter-spacing: 0;
-  font-variation-settings: "opsz" 144, "wght" 400, "SOFT" 100, "WONK" 1;
+  font-variation-settings: "opsz" 144, "wght" 400, "SOFT" 100, "WONK" 0;
   line-height: 1;
 }
 .pillar-kicker {
@@ -2780,7 +2813,7 @@ html[dir="rtl"] .legal ul { padding-left: 0; padding-right: 22px; }
   line-height: 1;
   color: var(--accent);
   margin: 0 0 12px;
-  font-variation-settings: "opsz" 144, "wght" 360, "SOFT" 100, "WONK" 1;
+  font-variation-settings: "opsz" 144, "wght" 360, "SOFT" 100, "WONK" 0;
   letter-spacing: -0.04em;
 }
 body.lang-ar .error-num {
@@ -3174,14 +3207,49 @@ body.lang-ar .cookie-banner { font-family: var(--sans-ar); }
   gap: 6px;
   overflow: hidden;
 }
+/* Real app screenshot fills the frame edge-to-edge; the notch sits in the
+   screenshot's own status-bar gap. */
+.chat-phone-frame.is-shot {
+  display: block;
+  padding: 0;
+}
+.chat-phone-shot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+/* Dynamic Island — sits in the centre gap of each screenshot's baked
+   status bar. Sized off --phone-w so it stays in proportion on every
+   phone, from the big feature mockups to the small gallery ones. */
 .chat-phone-notch {
   position: absolute;
-  top: 8px; left: 50%;
+  top: calc(var(--phone-w) * 0.03);
+  left: 50%;
   transform: translateX(-50%);
-  width: 86px; height: 22px;
-  background: #1a0e14;
-  border-radius: 16px;
+  width: calc(var(--phone-w) * 0.31);
+  height: calc(var(--phone-w) * 0.082);
+  min-width: 56px;
+  min-height: 16px;
+  background: #0c0608;
+  border-radius: 999px;
   z-index: 5;
+}
+/* Front camera lens at the right end of the island. */
+.chat-phone-notch::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 14%;
+  transform: translateY(-50%);
+  width: 33%;
+  max-width: 9px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%,
+    #3c4f6e 0%, #1a2433 45%, #0a0e15 75%);
+  box-shadow: inset 0 0 0 0.5px rgba(130, 160, 210, 0.45);
 }
 .chat-phone-statusbar {
   display: flex;
@@ -3522,7 +3590,7 @@ body.lang-ar .cookie-banner { font-family: var(--sans-ar); }
 .pc-question em {
   font-style: italic;
   color: var(--plum);
-  font-variation-settings: "opsz" 144, "wght" 420, "SOFT" 100, "WONK" 1;
+  font-variation-settings: "opsz" 144, "wght" 420, "SOFT" 100, "WONK" 0;
 }
 .pc-mood {
   display: flex;
@@ -3819,6 +3887,89 @@ body.lang-ar .cookie-banner { font-family: var(--sans-ar); }
 }
 
 /* === Moms photo strip === */
+/* ============================================
+   App gallery — grid of real app screenshots
+   ============================================ */
+.app-gallery {
+  max-width: var(--max);
+  margin: 0 auto clamp(60px, 10vh, 110px);
+}
+.app-gallery-header {
+  max-width: 760px;
+  margin: 0 auto clamp(36px, 6vh, 64px);
+  text-align: center;
+}
+.app-gallery-header .kicker { justify-content: center; }
+.app-gallery-h {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.4vw, 48px);
+  font-weight: 380;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--ink);
+  margin: 12px 0 16px;
+}
+body.lang-ar .app-gallery-h { font-family: var(--sans-ar); }
+.app-gallery-lede {
+  font-size: clamp(15px, 1.3vw, 17px);
+  line-height: 1.65;
+  color: color-mix(in srgb, var(--ink) 75%, transparent);
+  max-width: 52ch;
+  margin: 0 auto;
+}
+body.lang-ar .app-gallery-lede { font-family: var(--sans-ar); }
+
+.app-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 230px));
+  justify-content: center;
+  justify-items: center;
+  align-items: start;
+  gap: clamp(28px, 4vh, 52px) clamp(20px, 2.4vw, 44px);
+}
+.gallery-phone {
+  --phone-w: clamp(180px, 15vw, 230px);
+  margin: 0;
+  text-align: center;
+}
+@media (max-width: 900px) {
+  .app-gallery-grid { grid-template-columns: repeat(2, minmax(0, 230px)); }
+}
+/* The screenshots carry their own status bar (time + battery) but no
+   Dynamic Island — so we keep the CSS island, sitting in the centre gap. */
+.gallery-phone .chat-phone-notch {
+  display: block;
+  top: 5px;
+  width: 28%;
+  max-width: 64px;
+  height: 18px;
+  border-radius: 11px;
+}
+.gallery-cap {
+  margin-top: 16px;
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: color-mix(in srgb, var(--ink) 64%, transparent);
+}
+body.lang-ar .gallery-cap { font-family: var(--sans-ar); }
+
+@media (max-width: 640px) {
+  .app-gallery-grid {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    justify-content: flex-start;
+    padding: 4px 2px 14px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .gallery-phone {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    --phone-w: 200px;
+  }
+}
+
 .moms-header {
   max-width: 760px;
   margin: 0 auto 40px;

@@ -77,4 +77,4 @@ Mulberry      #4A1530  (wordmark)
 Rose          #E89BB4  (accent)
 Rose deep     #D77A98
 Petal         #FBE8EE
-Fonts         Fraunces (display) + DM Sans (body)
+Fonts         Cormorant Garamond (display) + Inter Tight (body)

@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..600,30..100,0..1;1,9..144,300..600,30..100,0..1&family=Inter+Tight:wght@300;400;500&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Tajawal:wght@300;400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter+Tight:wght@300;400;500&family=Tajawal:wght@300;400;500&display=swap"
     rel="stylesheet"
   />
 
@@ -788,47 +788,12 @@
           </p>
         </div>
 
-        <figure class="chat-phone" aria-hidden="true">
-          <div class="chat-phone-frame">
+        <figure class="chat-phone">
+          <div class="chat-phone-frame is-shot">
             <span class="chat-phone-notch"></span>
-            <div class="chat-phone-statusbar">
-              <span class="csb-time">9:41</span>
-              <span class="csb-right">
-                <svg class="csb-signal" viewBox="0 0 18 12" fill="none">
-                  <rect x="1" y="8" width="2" height="3" rx="0.5" fill="currentColor"/>
-                  <rect x="5" y="6" width="2" height="5" rx="0.5" fill="currentColor"/>
-                  <rect x="9" y="4" width="2" height="7" rx="0.5" fill="currentColor"/>
-                  <rect x="13" y="2" width="2" height="9" rx="0.5" fill="currentColor"/>
-                </svg>
-                <svg class="csb-wifi" viewBox="0 0 16 12" fill="none">
-                  <path d="M8 10.5l1.2-1.2a1.7 1.7 0 00-2.4 0L8 10.5z" fill="currentColor"/>
-                  <path d="M3.5 6.5a6.36 6.36 0 019 0M0.5 3.5a10.6 10.6 0 0115 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-                </svg>
-                <span class="csb-battery"><span class="csb-battery-fill"></span></span>
-              </span>
-            </div>
-
-            <div class="phone-screen-header">
-              <span class="psh-eyebrow">Today</span>
-              <h4 class="psh-title">A quieter list</h4>
-              <span class="psh-sub">2 done · 3 for later, if you can</span>
-            </div>
-
-            <div class="phone-screen-body phone-screen-tasks">
-              <ul class="ptl">
-                <li class="ptl-item is-done"><span class="ptl-check"></span>School pickup at 3</li>
-                <li class="ptl-item is-done"><span class="ptl-check"></span>Refill her prescription</li>
-                <li class="ptl-item"><span class="ptl-check"></span>Call mum back</li>
-                <li class="ptl-item"><span class="ptl-check"></span>Pack snack for tomorrow</li>
-                <li class="ptl-item is-soft"><span class="ptl-check"></span>Drink water — when you can</li>
-              </ul>
-            </div>
-
-            <div class="phone-screen-foot">
-              <span class="psf-text">mAmI is holding the rest. ♥</span>
-            </div>
-
-            <span class="chat-phone-home" aria-hidden="true"></span>
+            <img class="chat-phone-shot" src="assets/app-routines.jpg"
+                 alt="mAmI Routine Builder screen — a calm daily plan split into morning, afternoon and evening, with nothing overdue"
+                 width="736" height="1600" loading="lazy" decoding="async" />
           </div>
         </figure>
       </section>
@@ -849,53 +814,93 @@
           </p>
         </div>
 
-        <figure class="chat-phone" aria-hidden="true">
-          <div class="chat-phone-frame">
+        <figure class="chat-phone">
+          <div class="chat-phone-frame is-shot">
             <span class="chat-phone-notch"></span>
-            <div class="chat-phone-statusbar">
-              <span class="csb-time">9:41</span>
-              <span class="csb-right">
-                <svg class="csb-signal" viewBox="0 0 18 12" fill="none">
-                  <rect x="1" y="8" width="2" height="3" rx="0.5" fill="currentColor"/>
-                  <rect x="5" y="6" width="2" height="5" rx="0.5" fill="currentColor"/>
-                  <rect x="9" y="4" width="2" height="7" rx="0.5" fill="currentColor"/>
-                  <rect x="13" y="2" width="2" height="9" rx="0.5" fill="currentColor"/>
-                </svg>
-                <svg class="csb-wifi" viewBox="0 0 16 12" fill="none">
-                  <path d="M8 10.5l1.2-1.2a1.7 1.7 0 00-2.4 0L8 10.5z" fill="currentColor"/>
-                  <path d="M3.5 6.5a6.36 6.36 0 019 0M0.5 3.5a10.6 10.6 0 0115 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-                </svg>
-                <span class="csb-battery"><span class="csb-battery-fill"></span></span>
-              </span>
-            </div>
-
-            <div class="phone-screen-header">
-              <span class="psh-eyebrow">Daily check-in</span>
-              <h4 class="psh-title">A small breath, before the day.</h4>
-            </div>
-
-            <div class="phone-screen-body phone-screen-checkin">
-              <p class="pc-question">How are you, <em>really</em>?</p>
-              <div class="pc-mood">
-                <span class="pc-dot"></span>
-                <span class="pc-dot"></span>
-                <span class="pc-dot is-on"></span>
-                <span class="pc-dot"></span>
-                <span class="pc-dot"></span>
-              </div>
-              <div class="pc-mood-labels"><span>heavy</span><span>okay</span><span>light</span></div>
-              <div class="pc-note">
-                <span class="pc-note-placeholder">A few words, if you want…</span>
-              </div>
-            </div>
-
-            <div class="phone-screen-foot">
-              <span class="psf-button">Save quietly</span>
-            </div>
-
-            <span class="chat-phone-home" aria-hidden="true"></span>
+            <img class="chat-phone-shot" src="assets/app-wellness.jpg"
+                 alt="mAmI Wellness screen — a gentle mood check-in with kind self-care notes and soft daily reminders"
+                 width="736" height="1600" loading="lazy" decoding="async" />
           </div>
         </figure>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- APP GALLERY — more real screens                -->
+      <!-- ============================================== -->
+      <section class="app-gallery fade-up" aria-label="More of mAmI">
+        <header class="app-gallery-header">
+          <p class="kicker"><span class="kicker-num">·</span> <span data-ar="جولةٌ صغيرة">A little tour</span></p>
+          <h3 class="app-gallery-h" data-ar="كلُّ شيءٍ في مكانٍ واحدٍ هادئ.">
+            Everything, in one calm place.
+          </h3>
+          <p class="app-gallery-lede" data-ar="محطّاتُ النموّ، التطعيمات، الوجبات، المؤن، الجدول، ولحظةٌ لكِ — كلٌّ منها على شاشةٍ لطيفة.">
+            Milestones, vaccines, meals, supplies, the schedule, and a moment
+            for you — each on its own quiet screen.
+          </p>
+        </header>
+
+        <div class="app-gallery-grid" tabindex="0" role="group"
+             aria-label="App screens — scroll to see more" aria-roledescription="carousel">
+          <figure class="chat-phone gallery-phone">
+            <div class="chat-phone-frame is-shot">
+              <span class="chat-phone-notch"></span>
+              <img class="chat-phone-shot" src="assets/app-milestones.jpg"
+                   alt="mAmI Growth Milestones screen — tracking a baby's motor, language, social and cognitive milestones by age"
+                   width="736" height="1600" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="gallery-cap" data-ar="محطّات النموّ">Growth milestones</figcaption>
+          </figure>
+
+          <figure class="chat-phone gallery-phone">
+            <div class="chat-phone-frame is-shot">
+              <span class="chat-phone-notch"></span>
+              <img class="chat-phone-shot" src="assets/app-vaccines.jpg"
+                   alt="mAmI Vaccines screen — a country-aware immunisation schedule with gentle reminders"
+                   width="736" height="1600" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="gallery-cap" data-ar="جدول التطعيمات">Vaccine schedule</figcaption>
+          </figure>
+
+          <figure class="chat-phone gallery-phone">
+            <div class="chat-phone-frame is-shot">
+              <span class="chat-phone-notch"></span>
+              <img class="chat-phone-shot" src="assets/app-meals.jpg"
+                   alt="mAmI Meal Planning screen — a weekly grid of breakfast, lunch, dinner and snacks planned by child and age"
+                   width="736" height="1600" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="gallery-cap" data-ar="تخطيط الوجبات">Meal planning</figcaption>
+          </figure>
+
+          <figure class="chat-phone gallery-phone">
+            <div class="chat-phone-frame is-shot">
+              <span class="chat-phone-notch"></span>
+              <img class="chat-phone-shot" src="assets/app-supplies.jpg"
+                   alt="mAmI Supplies screen — tracking diapers and wipes with a gentle low-stock heads-up"
+                   width="736" height="1600" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="gallery-cap" data-ar="المؤن">Supplies tracker</figcaption>
+          </figure>
+
+          <figure class="chat-phone gallery-phone">
+            <div class="chat-phone-frame is-shot">
+              <span class="chat-phone-notch"></span>
+              <img class="chat-phone-shot" src="assets/app-schedule.jpg"
+                   alt="mAmI Family Schedule screen — a calm weekly calendar for the whole family"
+                   width="736" height="1600" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="gallery-cap" data-ar="جدول العائلة">Family schedule</figcaption>
+          </figure>
+
+          <figure class="chat-phone gallery-phone">
+            <div class="chat-phone-frame is-shot">
+              <span class="chat-phone-notch"></span>
+              <img class="chat-phone-shot" src="assets/app-insights.jpg"
+                   alt="mAmI Smart Insights screen — gentle mood trends and a weekly check-in summary"
+                   width="736" height="1600" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="gallery-cap" data-ar="رؤى لطيفة">Gentle insights</figcaption>
+          </figure>
+        </div>
       </section>
 
       <!-- Photo strip — placeholders ready for real photography -->

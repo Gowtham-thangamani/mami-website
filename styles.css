@@ -897,13 +897,30 @@ body.theme-night .cursor-halo { opacity: 0.95; }
     0 60px 120px -40px rgba(58, 16, 28, 0.45),
     inset 0 0 0 1px rgba(255, 244, 228, 0.15);
 }
+/* Photograph filling the frame, sitting beneath the brand-tinted scrim.
+   A gentle warm grade lets the (neutral) photos settle into the rose world. */
+.vignette-photo {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: 50% 38%;
+  filter: saturate(0.92) contrast(0.98) brightness(1.02);
+}
+/* Per-card framing so each subject stays in view above the text scrim. */
+.vignette-1 .vignette-photo { object-position: 50% 30%; } /* mother + crib */
+.vignette-2 .vignette-photo { object-position: 50% 60%; } /* portrait: the cup */
+.vignette-3 .vignette-photo { object-position: 62% 32%; } /* her, off-centre right */
+/* Brand-tinted scrim over the photo: a rose wash up top, deepening to plum
+   at the bottom so the ivory title + body stay fully legible. */
 .vignette-bg {
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse at 70% 30%, rgba(255, 235, 200, 0.6), transparent 60%),
-    radial-gradient(ellipse at 20% 80%, rgba(91, 44, 58, 0.35), transparent 55%),
-    linear-gradient(180deg, #F4DEC8 0%, #C68A98 100%);
-  filter: saturate(1.05);
+    radial-gradient(ellipse at 70% 25%, rgba(255, 235, 200, 0.28), transparent 55%),
+    linear-gradient(180deg,
+      rgba(198, 138, 152, 0.30) 0%,
+      rgba(122, 58, 78, 0.45) 42%,
+      rgba(61, 26, 36, 0.86) 100%);
+  mix-blend-mode: multiply;
 }
 .vignette-blur {
   position: absolute; inset: 0;
@@ -3682,7 +3699,10 @@ body.lang-ar .cookie-banner { font-family: var(--sans-ar); }
   .chat-copy { justify-self: center; text-align: center; }
   .chat-phone {
     justify-self: center;
-    --phone-w: min(80vw, 320px);
+    /* Smaller on phones so a single mockup doesn't fill ~75% of the
+       viewport (it was ~630px tall) and collide with the fixed
+       .act-marker pinned at the bottom. ~490px tall at 390px wide. */
+    --phone-w: min(58vw, 240px);
   }
   /* CTA centers when copy is centered on mobile */
   .store-cta { justify-content: center; }

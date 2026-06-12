@@ -1647,6 +1647,109 @@
 
 
   /* ---------------------------------------------------------
+     18c. HOME — APP SCREENSHOT MOTION
+          The gallery phones rise + scale in on a gentle
+          stagger, then drift at layered rates as you scroll
+          past. The three chat-feature phones float in and
+          breathe too. Claims its sections (removes .fade-up)
+          so buildFadeUps doesn't double-animate them.
+          Drift is desktop-only — the ≤640px gallery is a
+          horizontal swipe strip we leave undisturbed.
+     --------------------------------------------------------- */
+  function buildGalleryMotion() {
+    if (prefersReducedMotion) return;
+    if (typeof gsap === "undefined" || !window.ScrollTrigger) return;
+
+    const claim = (el) => { el.classList.remove("fade-up"); el.classList.add("is-in"); };
+    const mm = gsap.matchMedia();
+
+    // 1) App gallery — header stagger, then phones rise + scale in
+    const gallery = $(".app-gallery");
+    if (gallery) {
+      claim(gallery);
+
+      const head = gallery.querySelectorAll(
+        ".app-gallery-header .kicker, .app-gallery-h, .app-gallery-lede"
+      );
+      if (head.length) {
+        gsap.from(head, {
+          y: 26, opacity: 0,
+          duration: 0.8, stagger: 0.12, ease: "power3.out",
+          scrollTrigger: { trigger: gallery, start: "top 80%" },
+        });
+      }
+
+      const phones = gallery.querySelectorAll(".gallery-phone");
+      if (phones.length) {
+        gsap.from(phones, {
+          y: 54, opacity: 0, scale: 0.92,
+          duration: 0.9, stagger: 0.1, ease: "power3.out",
+          scrollTrigger: {
+            trigger: gallery.querySelector(".app-gallery-grid") || gallery,
+            start: "top 84%",
+          },
+        });
+
+        // Layered drift — each phone's column moves at a slightly
+        // different rate so the row gains quiet depth as it passes.
+        mm.add("(min-width: 901px)", () => {
+          phones.forEach((phone, i) => {
+            const depth = (i % 3) - 1; // -1, 0, 1 across the 3-up row
+            if (!depth) return;
+            gsap.to(phone, {
+              yPercent: -10 * depth,
+              ease: "none",
+              scrollTrigger: {
+                trigger: gallery,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1,
+              },
+            });
+          });
+        });
+      }
+    }
+
+    // 2) Chat-feature phones — copy rises, the phone floats up +
+    //    scales in, then drifts gently as the section scrolls through.
+    $$(".chat-feature").forEach((sec) => {
+      claim(sec);
+
+      const copy  = sec.querySelector(".chat-copy");
+      const phone = sec.querySelector(".chat-phone");
+
+      if (copy) {
+        gsap.from(copy, {
+          y: 30, opacity: 0,
+          duration: 0.9, ease: "power3.out",
+          scrollTrigger: { trigger: sec, start: "top 78%" },
+        });
+      }
+      if (phone) {
+        gsap.from(phone, {
+          y: 60, opacity: 0, scale: 0.93,
+          duration: 1.0, ease: "power3.out",
+          scrollTrigger: { trigger: sec, start: "top 80%" },
+        });
+        mm.add("(min-width: 901px)", () => {
+          gsap.to(phone, {
+            yPercent: -12,
+            ease: "none",
+            scrollTrigger: {
+              trigger: sec,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 1,
+            },
+          });
+        });
+      }
+    });
+  }
+
+
+  /* ---------------------------------------------------------
      19. SUBPAGE FADE-UP — IntersectionObserver reveal
          Fallback for any .fade-up elements not claimed by
          buildSubpageMotion above.
@@ -1724,6 +1827,9 @@
     }
 
     // ─── HOME ───
+    // Give the app screenshots a cinematic scroll reveal first, so it
+    // can claim those sections before buildFadeUps sweeps the rest.
+    buildGalleryMotion();
     buildFadeUps(); // Catches any straggler .fade-up elements on Home
 
     // ─── HOME ONLY ─────────────────────────────────────────────

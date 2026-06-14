@@ -3125,24 +3125,24 @@ body.lang-ar .cookie-banner { font-family: var(--sans-ar); }
   padding-top: clamp(20px, 4vh, 40px);
 }
 
-/* Pinned crossfade stack — the three feature blocks overlap and
-   crossfade as you scroll. JS adds .is-pinned-stack on desktop only;
-   on mobile / reduced-motion the class is never added, so they keep
-   their normal vertical flow + fade-up reveal. GSAP animates y/opacity,
-   so centering uses margin (never transform) to avoid clobbering it. */
-.chat-stack { position: relative; }
-.chat-stack.is-pinned-stack {
-  height: 100vh;
-}
-.chat-stack.is-pinned-stack .chat-feature {
-  position: absolute;
-  inset: 0;
-  width: auto;
-  max-width: 1140px;
-  height: 100vh;
-  margin: 0 auto;
-  padding: 0 var(--gutter);
-  align-content: center;
+/* Sequential reveal — as each feature scrolls into view (.fade-up adds
+   .is-in), its copy and phone arrive with a gentle stagger so the block
+   assembles itself rather than appearing all at once. Guarded behind
+   prefers-reduced-motion so reduced-motion users just see it in place. */
+@media (prefers-reduced-motion: no-preference) {
+  .chat-feature .chat-copy,
+  .chat-feature .chat-phone {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 800ms var(--ease), transform 800ms var(--ease);
+  }
+  .chat-feature.is-in .chat-copy  { transition-delay: 120ms; }
+  .chat-feature.is-in .chat-phone { transition-delay: 260ms; }
+  .chat-feature.is-in .chat-copy,
+  .chat-feature.is-in .chat-phone {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .chat-copy {
   text-align: left;

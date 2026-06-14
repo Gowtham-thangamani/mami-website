@@ -1895,10 +1895,6 @@
     // Build the hero / acts now — they sit underneath the splash at rest.
     buildBloomAct();
     buildWeightAct();
-    // buildChatStack();  // TEMP-DISABLED: pinned crossfade broke the layout
-    // (features overlapping; header mis-positioned). Needs live debugging
-    // before re-enabling. The .chat-stack wrapper + CSS stay inert without
-    // this call (the .is-pinned-stack class is only added inside it).
     buildSoftHourInterlude();
     buildDescentAct();
     buildNightCanvas();

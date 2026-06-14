@@ -476,6 +476,55 @@
 
 
   /* ---------------------------------------------------------
+     5b. IN YOUR HAND — pinned crossfade of the three feature
+         blocks (chat → list → check-in). One on screen at a time;
+         scrolling drifts the current one up and out as the next
+         rises in. Desktop only — phones / reduced-motion keep the
+         normal stacked flow handled by buildFadeUps().
+     --------------------------------------------------------- */
+  function buildChatStack() {
+    const stack = $(".chat-stack");
+    if (!stack) return;
+    const features = $$(".chat-feature", stack);
+    if (features.length < 2) return;
+
+    if (prefersReducedMotion || window.innerWidth <= 820) return;
+
+    stack.classList.add("is-pinned-stack");
+
+    // Claim the blocks so buildFadeUps / the .fade-up CSS don't fight the
+    // crossfade (same pattern as buildSubpageMotion / buildGalleryMotion).
+    // On mobile we return above, so .fade-up stays for the normal reveal.
+    features.forEach((f) => { f.classList.remove("fade-up"); f.classList.add("is-in"); });
+
+    // First feature visible; the rest wait just below, transparent.
+    gsap.set(features, { autoAlpha: 0, y: 50 });
+    gsap.set(features[0], { autoAlpha: 1, y: 0 });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: stack,
+        start: "top top",
+        end: () => `+=${features.length * window.innerHeight}`,
+        pin: true,
+        scrub: 1,
+        invalidateOnRefresh: true,
+        anticipatePin: 1,
+      },
+    });
+
+    // hold first, then for each next: drift current up/out + rise next in, hold.
+    features.forEach((f, i) => {
+      if (i === 0) { tl.to({}, { duration: 0.6 }); return; }
+      const prev = features[i - 1];
+      tl.to(prev, { autoAlpha: 0, y: -50, duration: 0.6, ease: "power1.inOut" })
+        .to(f,    { autoAlpha: 1, y: 0,   duration: 0.6, ease: "power1.inOut" }, "<")
+        .to({},   { duration: 0.6 });
+    });
+  }
+
+
+  /* ---------------------------------------------------------
      6. ACT III — THE DESCENT (theme flip + line-lotus draw)
      --------------------------------------------------------- */
   let descentTL = null;
@@ -1821,6 +1870,12 @@
       // BEFORE buildFadeUps so it can claim elements first. Anything
       // not claimed falls back to the simple .fade-up reveal.
       buildSubpageMotion();
+      // 'The Weight' lives on About now — same pinned horizontal-scroll
+      // animation. No-ops if .act-weight isn't on the page.
+      buildWeightAct();
+      // The app gallery lives on Features now (moved off Home). Runs the
+      // same cinematic reveal; no-ops if .app-gallery isn't present.
+      buildGalleryMotion();
       buildFadeUps();
       fontsReadyRefresh();
       return;
@@ -1840,6 +1895,10 @@
     // Build the hero / acts now — they sit underneath the splash at rest.
     buildBloomAct();
     buildWeightAct();
+    // buildChatStack();  // TEMP-DISABLED: pinned crossfade broke the layout
+    // (features overlapping; header mis-positioned). Needs live debugging
+    // before re-enabling. The .chat-stack wrapper + CSS stay inert without
+    // this call (the .is-pinned-stack class is only added inside it).
     buildSoftHourInterlude();
     buildDescentAct();
     buildNightCanvas();

@@ -3124,6 +3124,26 @@ body.lang-ar .cookie-banner { font-family: var(--sans-ar); }
   margin: 0 auto clamp(60px, 10vh, 100px);
   padding-top: clamp(20px, 4vh, 40px);
 }
+
+/* Pinned crossfade stack — the three feature blocks overlap and
+   crossfade as you scroll. JS adds .is-pinned-stack on desktop only;
+   on mobile / reduced-motion the class is never added, so they keep
+   their normal vertical flow + fade-up reveal. GSAP animates y/opacity,
+   so centering uses margin (never transform) to avoid clobbering it. */
+.chat-stack { position: relative; }
+.chat-stack.is-pinned-stack {
+  height: 100vh;
+}
+.chat-stack.is-pinned-stack .chat-feature {
+  position: absolute;
+  inset: 0;
+  width: auto;
+  max-width: 1140px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  align-content: center;
+}
 .chat-copy {
   text-align: left;
   max-width: 480px;
